@@ -1,0 +1,1699 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "Studio in New Cairo #1",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 4076938,
+      "currency": "EGP",
+      "address": "194 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 302,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "security",
+        "storage",
+        "balcony",
+        "parking",
+        "pool"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop1-1/800/500",
+        "https://picsum.photos/seed/prop1-2/800/500",
+        "https://picsum.photos/seed/prop1-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.98986842672947,
+        "lng": 31.44423045815954
+      },
+      "listed_at": "2025-09-02",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 2,
+      "title": "Duplex in 6th of October #2",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 4661794,
+      "currency": "EGP",
+      "address": "126 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 205,
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "amenities": [
+        "parking",
+        "balcony",
+        "security",
+        "ac"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop2-1/800/500",
+        "https://picsum.photos/seed/prop2-2/800/500",
+        "https://picsum.photos/seed/prop2-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.93685511188066,
+        "lng": 30.892498036879996
+      },
+      "listed_at": "2025-08-24",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 3,
+      "title": "Studio in 6th of October #3",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 11154864,
+      "currency": "EGP",
+      "address": "75 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 404,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "amenities": [
+        "storage",
+        "gym",
+        "security",
+        "parking",
+        "garden",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop3-1/800/500",
+        "https://picsum.photos/seed/prop3-2/800/500",
+        "https://picsum.photos/seed/prop3-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.881085846270608,
+        "lng": 30.845143977246863
+      },
+      "listed_at": "2025-05-25",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "new"
+    },
+    {
+      "id": 4,
+      "title": "Townhouse in New Cairo #4",
+      "type": "TOWNHOUSE",
+      "status": "FOR_RENT",
+      "price": 21903,
+      "currency": "EGP",
+      "address": "92 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 92,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "garden",
+        "pool"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop4-1/800/500",
+        "https://picsum.photos/seed/prop4-2/800/500",
+        "https://picsum.photos/seed/prop4-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.01226879954484,
+        "lng": 31.492923846405958
+      },
+      "listed_at": "2025-05-15",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 5,
+      "title": "Villa in Cairo #5",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 4439895,
+      "currency": "EGP",
+      "address": "136 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 428,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "security",
+        "elevator",
+        "pool",
+        "storage",
+        "parking"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop5-1/800/500",
+        "https://picsum.photos/seed/prop5-2/800/500",
+        "https://picsum.photos/seed/prop5-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.010813848220202,
+        "lng": 31.187019198860394
+      },
+      "listed_at": "2025-07-03",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 6,
+      "title": "Villa in Cairo #6",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 7990843,
+      "currency": "EGP",
+      "address": "158 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 202,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "garden",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop6-1/800/500",
+        "https://picsum.photos/seed/prop6-2/800/500",
+        "https://picsum.photos/seed/prop6-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.995442388603156,
+        "lng": 31.188609833896287
+      },
+      "listed_at": "2025-07-17",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "new"
+    },
+    {
+      "id": 7,
+      "title": "Townhouse in 6th of October #7",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 3963045,
+      "currency": "EGP",
+      "address": "132 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 100,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "garden",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop7-1/800/500",
+        "https://picsum.photos/seed/prop7-2/800/500",
+        "https://picsum.photos/seed/prop7-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.92677683550338,
+        "lng": 30.858440976850936
+      },
+      "listed_at": "2025-07-29",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 8,
+      "title": "Townhouse in 6th of October #8",
+      "type": "TOWNHOUSE",
+      "status": "FOR_RENT",
+      "price": 40599,
+      "currency": "EGP",
+      "address": "29 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 225,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "amenities": [
+        "security",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop8-1/800/500",
+        "https://picsum.photos/seed/prop8-2/800/500",
+        "https://picsum.photos/seed/prop8-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.881408806766153,
+        "lng": 30.82840144983984
+      },
+      "listed_at": "2025-08-19",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 9,
+      "title": "Studio in Alexandria #9",
+      "type": "STUDIO",
+      "status": "FOR_RENT",
+      "price": 48375,
+      "currency": "EGP",
+      "address": "130 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 391,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "amenities": [
+        "pool",
+        "ac",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop9-1/800/500",
+        "https://picsum.photos/seed/prop9-2/800/500",
+        "https://picsum.photos/seed/prop9-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.189150393576934,
+        "lng": 29.886152279063747
+      },
+      "listed_at": "2025-05-16",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "new"
+    },
+    {
+      "id": 10,
+      "title": "Duplex in 6th of October #10",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 6296236,
+      "currency": "EGP",
+      "address": "110 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 377,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "amenities": [
+        "garden",
+        "parking",
+        "storage",
+        "security",
+        "gym",
+        "ac"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop10-1/800/500",
+        "https://picsum.photos/seed/prop10-2/800/500",
+        "https://picsum.photos/seed/prop10-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.872360464590365,
+        "lng": 30.84001074779605
+      },
+      "listed_at": "2025-06-11",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 11,
+      "title": "Apartment in Alexandria #11",
+      "type": "APARTMENT",
+      "status": "FOR_SALE",
+      "price": 11443868,
+      "currency": "EGP",
+      "address": "165 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 410,
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "amenities": [
+        "gym",
+        "pool",
+        "parking",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop11-1/800/500",
+        "https://picsum.photos/seed/prop11-2/800/500",
+        "https://picsum.photos/seed/prop11-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.239919841942072,
+        "lng": 29.947874854926976
+      },
+      "listed_at": "2025-05-16",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 12,
+      "title": "Studio in 6th of October #12",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 7662978,
+      "currency": "EGP",
+      "address": "15 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 107,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "balcony",
+        "gym",
+        "elevator",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop12-1/800/500",
+        "https://picsum.photos/seed/prop12-2/800/500",
+        "https://picsum.photos/seed/prop12-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.917564165307024,
+        "lng": 30.829177928121076
+      },
+      "listed_at": "2025-07-28",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "new"
+    },
+    {
+      "id": 13,
+      "title": "Studio in 6th of October #13",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 10979017,
+      "currency": "EGP",
+      "address": "186 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 386,
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "amenities": [
+        "pool",
+        "garden",
+        "gym",
+        "security",
+        "balcony",
+        "parking"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop13-1/800/500",
+        "https://picsum.photos/seed/prop13-2/800/500",
+        "https://picsum.photos/seed/prop13-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.954212483479893,
+        "lng": 30.901460615853562
+      },
+      "listed_at": "2025-08-06",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 14,
+      "title": "Duplex in Cairo #14",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 5217970,
+      "currency": "EGP",
+      "address": "139 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 377,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "amenities": [
+        "parking",
+        "ac",
+        "pool",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop14-1/800/500",
+        "https://picsum.photos/seed/prop14-2/800/500",
+        "https://picsum.photos/seed/prop14-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.06044857037415,
+        "lng": 31.26502028197857
+      },
+      "listed_at": "2025-07-31",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 15,
+      "title": "Townhouse in Cairo #15",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 6725328,
+      "currency": "EGP",
+      "address": "151 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 137,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "amenities": [
+        "storage",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop15-1/800/500",
+        "https://picsum.photos/seed/prop15-2/800/500",
+        "https://picsum.photos/seed/prop15-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.05495352471694,
+        "lng": 31.192504583245704
+      },
+      "listed_at": "2025-06-12",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "new"
+    },
+    {
+      "id": 16,
+      "title": "Studio in New Cairo #16",
+      "type": "STUDIO",
+      "status": "FOR_RENT",
+      "price": 84416,
+      "currency": "EGP",
+      "address": "123 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 47,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "amenities": [
+        "storage",
+        "security",
+        "garden",
+        "parking",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop16-1/800/500",
+        "https://picsum.photos/seed/prop16-2/800/500",
+        "https://picsum.photos/seed/prop16-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.04305731214278,
+        "lng": 31.53327910513046
+      },
+      "listed_at": "2025-07-15",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 17,
+      "title": "Townhouse in Alexandria #17",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 11658680,
+      "currency": "EGP",
+      "address": "189 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 167,
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "amenities": [
+        "storage",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop17-1/800/500",
+        "https://picsum.photos/seed/prop17-2/800/500",
+        "https://picsum.photos/seed/prop17-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.24525890526162,
+        "lng": 29.896629264542486
+      },
+      "listed_at": "2025-05-23",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 18,
+      "title": "Apartment in Giza #18",
+      "type": "APARTMENT",
+      "status": "FOR_RENT",
+      "price": 59403,
+      "currency": "EGP",
+      "address": "9 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 322,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "amenities": [
+        "ac",
+        "gym",
+        "balcony",
+        "elevator",
+        "parking",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop18-1/800/500",
+        "https://picsum.photos/seed/prop18-2/800/500",
+        "https://picsum.photos/seed/prop18-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.02716506594998,
+        "lng": 31.20052397901928
+      },
+      "listed_at": "2025-07-13",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "new"
+    },
+    {
+      "id": 19,
+      "title": "Villa in Cairo #19",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 2688921,
+      "currency": "EGP",
+      "address": "31 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 366,
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "amenities": [
+        "storage",
+        "gym",
+        "parking",
+        "garden",
+        "balcony"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop19-1/800/500",
+        "https://picsum.photos/seed/prop19-2/800/500",
+        "https://picsum.photos/seed/prop19-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.07560522814063,
+        "lng": 31.19988684057718
+      },
+      "listed_at": "2025-09-06",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "primum"
+    },
+    {
+      "id": 20,
+      "title": "Studio in New Cairo #20",
+      "type": "STUDIO",
+      "status": "FOR_RENT",
+      "price": 9767,
+      "currency": "EGP",
+      "address": "46 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 444,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "storage",
+        "balcony",
+        "pool"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop20-1/800/500",
+        "https://picsum.photos/seed/prop20-2/800/500",
+        "https://picsum.photos/seed/prop20-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.00853636891001,
+        "lng": 31.44936773888903
+      },
+      "listed_at": "2025-08-06",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals.",
+      "badge": "featured"
+    },
+    {
+      "id": 21,
+      "badge": "new",
+      "title": "Studio in Cairo #21",
+      "type": "STUDIO",
+      "status": "FOR_RENT",
+      "price": 70900,
+      "currency": "EGP",
+      "address": "121 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 417,
+      "bedrooms": 0,
+      "bathrooms": 2,
+      "amenities": [
+        "parking",
+        "pool",
+        "gym",
+        "garden"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop21-1/800/500",
+        "https://picsum.photos/seed/prop21-2/800/500",
+        "https://picsum.photos/seed/prop21-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0444,
+        "lng": 31.2457
+      },
+      "listed_at": "2025-09-25",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 22,
+      "badge": "primum",
+      "title": "Duplex in New Cairo #22",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 8974000,
+      "currency": "EGP",
+      "address": "122 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 434,
+      "bedrooms": 1,
+      "bathrooms": 3,
+      "amenities": [
+        "pool",
+        "gym",
+        "garden",
+        "elevator",
+        "ac"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop22-1/800/500",
+        "https://picsum.photos/seed/prop22-2/800/500",
+        "https://picsum.photos/seed/prop22-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.04,
+        "lng": 31.4924
+      },
+      "listed_at": "2025-05-05",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 23,
+      "badge": "featured",
+      "title": "Townhouse in 6th of October #23",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 9291000,
+      "currency": "EGP",
+      "address": "123 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 451,
+      "bedrooms": 2,
+      "bathrooms": 4,
+      "amenities": [
+        "gym",
+        "garden",
+        "elevator",
+        "ac",
+        "security",
+        "storage"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop23-1/800/500",
+        "https://picsum.photos/seed/prop23-2/800/500",
+        "https://picsum.photos/seed/prop23-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.9689,
+        "lng": 30.9476
+      },
+      "listed_at": "2025-05-12",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 24,
+      "badge": "new",
+      "title": "Apartment in Alexandria #24",
+      "type": "APARTMENT",
+      "status": "FOR_RENT",
+      "price": 79600,
+      "currency": "EGP",
+      "address": "124 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 68,
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "amenities": [
+        "garden",
+        "elevator",
+        "ac"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop24-1/800/500",
+        "https://picsum.photos/seed/prop24-2/800/500",
+        "https://picsum.photos/seed/prop24-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.2301,
+        "lng": 29.9587
+      },
+      "listed_at": "2025-05-19",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 25,
+      "badge": "primum",
+      "title": "Villa in Giza #25",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 9925000,
+      "currency": "EGP",
+      "address": "125 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 85,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "amenities": [
+        "elevator",
+        "ac",
+        "security",
+        "storage"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop25-1/800/500",
+        "https://picsum.photos/seed/prop25-2/800/500",
+        "https://picsum.photos/seed/prop25-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0531,
+        "lng": 31.2089
+      },
+      "listed_at": "2025-05-26",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 26,
+      "badge": "featured",
+      "title": "Studio in Cairo #26",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 10242000,
+      "currency": "EGP",
+      "address": "126 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 102,
+      "bedrooms": 5,
+      "bathrooms": 3,
+      "amenities": [
+        "ac",
+        "security",
+        "storage",
+        "balcony",
+        "parking"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop26-1/800/500",
+        "https://picsum.photos/seed/prop26-2/800/500",
+        "https://picsum.photos/seed/prop26-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0944,
+        "lng": 31.2457
+      },
+      "listed_at": "2025-06-02",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 27,
+      "badge": "new",
+      "title": "Duplex in New Cairo #27",
+      "type": "DUPLEX",
+      "status": "FOR_RENT",
+      "price": 88300,
+      "currency": "EGP",
+      "address": "127 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 119,
+      "bedrooms": 6,
+      "bathrooms": 4,
+      "amenities": [
+        "security",
+        "storage",
+        "balcony",
+        "parking",
+        "pool",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop27-1/800/500",
+        "https://picsum.photos/seed/prop27-2/800/500",
+        "https://picsum.photos/seed/prop27-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.09,
+        "lng": 31.4924
+      },
+      "listed_at": "2025-06-09",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 28,
+      "badge": "primum",
+      "title": "Townhouse in 6th of October #28",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 10876000,
+      "currency": "EGP",
+      "address": "128 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 136,
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "amenities": [
+        "storage",
+        "balcony",
+        "parking"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop28-1/800/500",
+        "https://picsum.photos/seed/prop28-2/800/500",
+        "https://picsum.photos/seed/prop28-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.9489,
+        "lng": 30.9476
+      },
+      "listed_at": "2025-06-16",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 29,
+      "badge": "featured",
+      "title": "Apartment in Alexandria #29",
+      "type": "APARTMENT",
+      "status": "FOR_SALE",
+      "price": 11193000,
+      "currency": "EGP",
+      "address": "129 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 153,
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "amenities": [
+        "balcony",
+        "parking",
+        "pool",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop29-1/800/500",
+        "https://picsum.photos/seed/prop29-2/800/500",
+        "https://picsum.photos/seed/prop29-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.2101,
+        "lng": 29.9587
+      },
+      "listed_at": "2025-06-23",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 30,
+      "badge": "new",
+      "title": "Villa in Giza #30",
+      "type": "VILLA",
+      "status": "FOR_RENT",
+      "price": 12000,
+      "currency": "EGP",
+      "address": "130 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 170,
+      "bedrooms": 2,
+      "bathrooms": 3,
+      "amenities": [
+        "parking",
+        "pool",
+        "gym",
+        "garden",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop30-1/800/500",
+        "https://picsum.photos/seed/prop30-2/800/500",
+        "https://picsum.photos/seed/prop30-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0331,
+        "lng": 31.2089
+      },
+      "listed_at": "2025-06-30",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 31,
+      "badge": "primum",
+      "title": "Studio in Cairo #31",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 11827000,
+      "currency": "EGP",
+      "address": "131 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 187,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "amenities": [
+        "pool",
+        "gym",
+        "garden",
+        "elevator",
+        "ac",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop31-1/800/500",
+        "https://picsum.photos/seed/prop31-2/800/500",
+        "https://picsum.photos/seed/prop31-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0744,
+        "lng": 31.2457
+      },
+      "listed_at": "2025-07-07",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 32,
+      "badge": "featured",
+      "title": "Duplex in New Cairo #32",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 2144000,
+      "currency": "EGP",
+      "address": "132 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 204,
+      "bedrooms": 4,
+      "bathrooms": 1,
+      "amenities": [
+        "gym",
+        "garden",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop32-1/800/500",
+        "https://picsum.photos/seed/prop32-2/800/500",
+        "https://picsum.photos/seed/prop32-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.07,
+        "lng": 31.4924
+      },
+      "listed_at": "2025-07-14",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 33,
+      "badge": "new",
+      "title": "Townhouse in 6th of October #33",
+      "type": "TOWNHOUSE",
+      "status": "FOR_RENT",
+      "price": 20700,
+      "currency": "EGP",
+      "address": "133 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 221,
+      "bedrooms": 5,
+      "bathrooms": 2,
+      "amenities": [
+        "garden",
+        "elevator",
+        "ac",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop33-1/800/500",
+        "https://picsum.photos/seed/prop33-2/800/500",
+        "https://picsum.photos/seed/prop33-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.9989,
+        "lng": 30.9476
+      },
+      "listed_at": "2025-07-21",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 34,
+      "badge": "primum",
+      "title": "Apartment in Alexandria #34",
+      "type": "APARTMENT",
+      "status": "FOR_SALE",
+      "price": 2778000,
+      "currency": "EGP",
+      "address": "134 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 238,
+      "bedrooms": 6,
+      "bathrooms": 3,
+      "amenities": [
+        "elevator",
+        "ac",
+        "security",
+        "storage",
+        "balcony"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop34-1/800/500",
+        "https://picsum.photos/seed/prop34-2/800/500",
+        "https://picsum.photos/seed/prop34-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.2601,
+        "lng": 29.9587
+      },
+      "listed_at": "2025-07-28",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 35,
+      "badge": "featured",
+      "title": "Villa in Giza #35",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 3095000,
+      "currency": "EGP",
+      "address": "135 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 255,
+      "bedrooms": 0,
+      "bathrooms": 4,
+      "amenities": [
+        "ac",
+        "security",
+        "storage",
+        "balcony",
+        "parking",
+        "pool"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop35-1/800/500",
+        "https://picsum.photos/seed/prop35-2/800/500",
+        "https://picsum.photos/seed/prop35-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0131,
+        "lng": 31.2089
+      },
+      "listed_at": "2025-08-04",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 36,
+      "badge": "new",
+      "title": "Studio in Cairo #36",
+      "type": "STUDIO",
+      "status": "FOR_RENT",
+      "price": 29400,
+      "currency": "EGP",
+      "address": "136 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 272,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "amenities": [
+        "security",
+        "storage",
+        "balcony"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop36-1/800/500",
+        "https://picsum.photos/seed/prop36-2/800/500",
+        "https://picsum.photos/seed/prop36-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0544,
+        "lng": 31.2457
+      },
+      "listed_at": "2025-08-11",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 37,
+      "badge": "primum",
+      "title": "Duplex in New Cairo #37",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 3729000,
+      "currency": "EGP",
+      "address": "137 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 289,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "amenities": [
+        "storage",
+        "balcony",
+        "parking",
+        "pool"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop37-1/800/500",
+        "https://picsum.photos/seed/prop37-2/800/500",
+        "https://picsum.photos/seed/prop37-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.05,
+        "lng": 31.4924
+      },
+      "listed_at": "2025-08-18",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 38,
+      "badge": "featured",
+      "title": "Townhouse in 6th of October #38",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 4046000,
+      "currency": "EGP",
+      "address": "138 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 306,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "amenities": [
+        "balcony",
+        "parking",
+        "pool",
+        "gym",
+        "garden"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop38-1/800/500",
+        "https://picsum.photos/seed/prop38-2/800/500",
+        "https://picsum.photos/seed/prop38-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.9789,
+        "lng": 30.9476
+      },
+      "listed_at": "2025-08-25",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 39,
+      "badge": "new",
+      "title": "Apartment in Alexandria #39",
+      "type": "APARTMENT",
+      "status": "FOR_RENT",
+      "price": 38100,
+      "currency": "EGP",
+      "address": "139 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 323,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "amenities": [
+        "parking",
+        "pool",
+        "gym",
+        "garden",
+        "elevator",
+        "ac"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop39-1/800/500",
+        "https://picsum.photos/seed/prop39-2/800/500",
+        "https://picsum.photos/seed/prop39-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.2401,
+        "lng": 29.9587
+      },
+      "listed_at": "2025-09-01",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 40,
+      "badge": "primum",
+      "title": "Villa in Giza #40",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 4680000,
+      "currency": "EGP",
+      "address": "140 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 340,
+      "bedrooms": 5,
+      "bathrooms": 1,
+      "amenities": [
+        "pool",
+        "gym",
+        "garden"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop40-1/800/500",
+        "https://picsum.photos/seed/prop40-2/800/500",
+        "https://picsum.photos/seed/prop40-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0631,
+        "lng": 31.2089
+      },
+      "listed_at": "2025-09-08",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 41,
+      "badge": "featured",
+      "title": "Studio in Cairo #41",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 4997000,
+      "currency": "EGP",
+      "address": "141 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 357,
+      "bedrooms": 6,
+      "bathrooms": 2,
+      "amenities": [
+        "gym",
+        "garden",
+        "elevator",
+        "ac"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop41-1/800/500",
+        "https://picsum.photos/seed/prop41-2/800/500",
+        "https://picsum.photos/seed/prop41-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.1044,
+        "lng": 31.2457
+      },
+      "listed_at": "2025-09-15",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 42,
+      "badge": "new",
+      "title": "Duplex in New Cairo #42",
+      "type": "DUPLEX",
+      "status": "FOR_RENT",
+      "price": 46800,
+      "currency": "EGP",
+      "address": "142 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 374,
+      "bedrooms": 0,
+      "bathrooms": 3,
+      "amenities": [
+        "garden",
+        "elevator",
+        "ac",
+        "security",
+        "storage"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop42-1/800/500",
+        "https://picsum.photos/seed/prop42-2/800/500",
+        "https://picsum.photos/seed/prop42-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.03,
+        "lng": 31.4924
+      },
+      "listed_at": "2025-09-22",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 43,
+      "badge": "primum",
+      "title": "Townhouse in 6th of October #43",
+      "type": "TOWNHOUSE",
+      "status": "FOR_SALE",
+      "price": 5631000,
+      "currency": "EGP",
+      "address": "143 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 391,
+      "bedrooms": 1,
+      "bathrooms": 4,
+      "amenities": [
+        "elevator",
+        "ac",
+        "security",
+        "storage",
+        "balcony",
+        "parking"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop43-1/800/500",
+        "https://picsum.photos/seed/prop43-2/800/500",
+        "https://picsum.photos/seed/prop43-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 29.9589,
+        "lng": 30.9476
+      },
+      "listed_at": "2025-05-02",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 44,
+      "badge": "featured",
+      "title": "Apartment in Alexandria #44",
+      "type": "APARTMENT",
+      "status": "FOR_SALE",
+      "price": 5948000,
+      "currency": "EGP",
+      "address": "144 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 408,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "amenities": [
+        "ac",
+        "security",
+        "storage"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop44-1/800/500",
+        "https://picsum.photos/seed/prop44-2/800/500",
+        "https://picsum.photos/seed/prop44-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.2201,
+        "lng": 29.9587
+      },
+      "listed_at": "2025-05-09",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 45,
+      "badge": "new",
+      "title": "Villa in Giza #45",
+      "type": "VILLA",
+      "status": "FOR_RENT",
+      "price": 55500,
+      "currency": "EGP",
+      "address": "145 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 425,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "amenities": [
+        "security",
+        "storage",
+        "balcony",
+        "parking"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop45-1/800/500",
+        "https://picsum.photos/seed/prop45-2/800/500",
+        "https://picsum.photos/seed/prop45-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0431,
+        "lng": 31.2089
+      },
+      "listed_at": "2025-05-16",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 46,
+      "badge": "primum",
+      "title": "Studio in Cairo #46",
+      "type": "STUDIO",
+      "status": "FOR_SALE",
+      "price": 6582000,
+      "currency": "EGP",
+      "address": "146 Example St, Cairo",
+      "city": "Cairo",
+      "country": "EG",
+      "area_sqm": 442,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "amenities": [
+        "storage",
+        "balcony",
+        "parking",
+        "pool",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop46-1/800/500",
+        "https://picsum.photos/seed/prop46-2/800/500",
+        "https://picsum.photos/seed/prop46-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0844,
+        "lng": 31.2457
+      },
+      "listed_at": "2025-05-23",
+      "agent_id": 2,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 47,
+      "badge": "featured",
+      "title": "Duplex in New Cairo #47",
+      "type": "DUPLEX",
+      "status": "FOR_SALE",
+      "price": 6899000,
+      "currency": "EGP",
+      "address": "147 Example St, New Cairo",
+      "city": "New Cairo",
+      "country": "EG",
+      "area_sqm": 459,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "amenities": [
+        "balcony",
+        "parking",
+        "pool",
+        "gym",
+        "garden",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop47-1/800/500",
+        "https://picsum.photos/seed/prop47-2/800/500",
+        "https://picsum.photos/seed/prop47-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.08,
+        "lng": 31.4924
+      },
+      "listed_at": "2025-05-30",
+      "agent_id": 3,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 48,
+      "badge": "new",
+      "title": "Townhouse in 6th of October #48",
+      "type": "TOWNHOUSE",
+      "status": "FOR_RENT",
+      "price": 64200,
+      "currency": "EGP",
+      "address": "148 Example St, 6th of October",
+      "city": "6th of October",
+      "country": "EG",
+      "area_sqm": 76,
+      "bedrooms": 6,
+      "bathrooms": 1,
+      "amenities": [
+        "parking",
+        "pool",
+        "gym"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop48-1/800/500",
+        "https://picsum.photos/seed/prop48-2/800/500",
+        "https://picsum.photos/seed/prop48-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0089,
+        "lng": 30.9476
+      },
+      "listed_at": "2025-06-06",
+      "agent_id": 4,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 49,
+      "badge": "primum",
+      "title": "Apartment in Alexandria #49",
+      "type": "APARTMENT",
+      "status": "FOR_SALE",
+      "price": 7533000,
+      "currency": "EGP",
+      "address": "149 Example St, Alexandria",
+      "city": "Alexandria",
+      "country": "EG",
+      "area_sqm": 93,
+      "bedrooms": 0,
+      "bathrooms": 2,
+      "amenities": [
+        "pool",
+        "gym",
+        "garden",
+        "elevator"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop49-1/800/500",
+        "https://picsum.photos/seed/prop49-2/800/500",
+        "https://picsum.photos/seed/prop49-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 31.2001,
+        "lng": 29.9587
+      },
+      "listed_at": "2025-06-13",
+      "agent_id": 5,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    },
+    {
+      "id": 50,
+      "badge": "featured",
+      "title": "Villa in Giza #50",
+      "type": "VILLA",
+      "status": "FOR_SALE",
+      "price": 7850000,
+      "currency": "EGP",
+      "address": "150 Example St, Giza",
+      "city": "Giza",
+      "country": "EG",
+      "area_sqm": 110,
+      "bedrooms": 1,
+      "bathrooms": 3,
+      "amenities": [
+        "gym",
+        "garden",
+        "elevator",
+        "ac",
+        "security"
+      ],
+      "images": [
+        "https://picsum.photos/seed/prop50-1/800/500",
+        "https://picsum.photos/seed/prop50-2/800/500",
+        "https://picsum.photos/seed/prop50-3/800/500"
+      ],
+      "coordinates": {
+        "lat": 30.0231,
+        "lng": 31.2089
+      },
+      "listed_at": "2025-06-20",
+      "agent_id": 1,
+      "description": "Modern property with great location and sunlight. Ideal for families and professionals."
+    }
+  ],
+  "agents": [
+    {
+      "id": 1,
+      "name": "Nile Homes",
+      "phone": "+20 100 111 2222",
+      "email": "contact@nilehomes.example"
+    },
+    {
+      "id": 2,
+      "name": "Delta Realty",
+      "phone": "+20 100 333 4444",
+      "email": "hello@deltarealty.example"
+    },
+    {
+      "id": 3,
+      "name": "Alex Estates",
+      "phone": "+20 100 555 6666",
+      "email": "info@alexestates.example"
+    },
+    {
+      "id": 4,
+      "name": "Giza Property Co.",
+      "phone": "+20 100 777 8888",
+      "email": "sales@gizaproperty.example"
+    },
+    {
+      "id": 5,
+      "name": "6th October Brokers",
+      "phone": "+20 100 999 0000",
+      "email": "team@octbroker.example"
+    }
+  ]
+}

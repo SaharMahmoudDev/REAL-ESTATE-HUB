@@ -1,0 +1,61 @@
+import React, { useContext } from "react";
+
+//  LOCAL COMPONENTS
+import Section from "../../components/ui/Section";
+import PaginationSection from "./Pagination";
+import { Heading } from "../../components/ui/Heading";
+import CardBrowser from "./CardBrowser";
+import { usePropertiesQuery } from "../../hooks/usePropertiesQuery";
+import { BaramsContext } from "../../context/ParamsProvider";
+
+const ResultsBrowser = ({ view }) => {
+  const { params, setBarams } = useContext(BaramsContext);
+
+  const { isLoading, isError, error, data } = usePropertiesQuery(params);
+  
+  if (isLoading) {
+    return <div> isloading</div>;
+  }
+  if (isError) {
+    return <div> {error.message}</div>;
+  }
+
+  return (
+    <Section>
+      {/* HEADING */}
+      <Heading
+        label="Properties for Sale"
+        text={`showing ${data.totalCount} results`}
+        variant="!font-semibold !text-xl !leading-7 "
+      />
+      {/* REAL STATE RESULTS */}
+      <div
+        className={`mt-6 transition grid ${
+          view
+            ? "grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
+            : "grid-cols-1 place-items-center "
+        } gap-6`}
+      >
+        {/* {isLoading && <div> isloading</div>}
+        {isError && <div>{error.message}</div>} */}
+
+
+        {data.data.map((item) => (
+          <CardBrowser key={item.id} view={view} data={item} />
+        ))}
+      </div>
+
+      {/* PAGINATION */}
+      {data.totalCount > 0 && (
+        <PaginationSection
+          count={data.totalPages}
+          onChange={(nextPage) =>
+            setBarams((prev) => ({ ...prev, _page: nextPage }))
+          }
+        />
+      )}
+    </Section>
+  );
+};
+
+export default ResultsBrowser;
