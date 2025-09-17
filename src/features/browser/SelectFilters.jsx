@@ -39,7 +39,7 @@ const SelectFilters = ({
   return (
     <>
       <Select
-      className="bg-secondary"
+      className="bg-secondary px-2 py-1 sm:px-3 sm:py-2"
         displayEmpty
         variant="outlined"
         value={value}
@@ -70,9 +70,9 @@ const SelectFilters = ({
           "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
             {
               // paddingRight:0,
-
-              px: 2,
-              py: 1,
+p:0,
+              // px: 2,
+              // py: 1,
               // background: "var(--color-secondary)",
               // background: "#F3F4F6",
               borderRadius: 2,
