@@ -70,7 +70,9 @@ const SelectFilters = ({
             {
               px: 2,
               py: 1,
-              background: "var(--color-secondary)",
+              // background: "var(--color-secondary)",
+              background: "#F3F4F6",
+
               borderRadius: 2,
               display: "flex",
               justifyContent: "center",
