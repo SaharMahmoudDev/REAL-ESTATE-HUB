@@ -39,6 +39,7 @@ const SelectFilters = ({
   return (
     <>
       <Select
+      className="bg-secondary"
         displayEmpty
         variant="outlined"
         value={value}
@@ -66,13 +67,13 @@ const SelectFilters = ({
           );
         }}
         sx={{
-          "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+          "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
             {
-              paddingRight:0,
+              // paddingRight:0,
 
               px: 2,
               py: 1,
-              background: "var(--color-secondary)",
+              // background: "var(--color-secondary)",
               // background: "#F3F4F6",
               borderRadius: 2,
               display: "flex",
@@ -80,9 +81,12 @@ const SelectFilters = ({
               alignItems: "center",
 
               "@media (max-width:600px)": {
-                px: 1,
-                py: 0.5,
+                // px: 1,
+                // py: 0.5,
               },
+            },
+            "& .css-mp9f0v.css-mp9f0v.css-mp9f0v":{
+// background:'red !important'
             },
           // "& .css-piust8": {
           //   background: "#F3F4F6",
