@@ -71,8 +71,7 @@ const SelectFilters = ({
               px: 2,
               py: 1,
               // background: "var(--color-secondary)",
-              background: "#F3F4F6",
-
+              // background: "#F3F4F6",
               borderRadius: 2,
               display: "flex",
               justifyContent: "center",
@@ -82,6 +81,10 @@ const SelectFilters = ({
                 px: 1,
                 py: 0.5,
               },
+            },
+            "& .css-1huarmb":{
+              background: "#F3F4F6",
+
             },
           "& .MuiOutlinedInput-notchedOutline": {
             border: "none",
