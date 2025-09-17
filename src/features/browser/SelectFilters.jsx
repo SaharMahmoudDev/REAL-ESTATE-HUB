@@ -39,7 +39,7 @@ const SelectFilters = ({
   return (
     <>
       <Select
-        className="gray-interactive  px-2.5 py-1.5 sm:px-3 sm:py-2 !rounded-lg"
+        className="gray-interactive px-4 sm:px-6 py-2.25 !rounded-lg"
         displayEmpty
         variant="outlined"
         value={value}
