@@ -16,11 +16,15 @@ import HotelIcon from "@mui/icons-material/Hotel";
 
 //  Constants
 import { SORT_OPTIONS } from "../../styles/constants/Options";
+import { useMediaQuery } from "@mui/material";
 
 const FilterBrowser = ({ view, setView }) => {
   const toggleButton = (toggle) => {
     setView(toggle);
   };
+  const isSmall = useMediaQuery("(max-width:600px)");
+
+
 
   const flexBetweenCenter = ["flex", " items-center", "flex-wrap"].join(" ");
   const classNameSortFilter = [
@@ -46,7 +50,7 @@ const FilterBrowser = ({ view, setView }) => {
           <span className={classNameSortFilter}>filters:</span>
 
           <SelectFilters
-            text="bedrooms"
+            text={isSmall?'bed':'bedroom'}
             icon={HotelIcon}
             isNumeric={true}
             iconProps={{
@@ -63,7 +67,7 @@ const FilterBrowser = ({ view, setView }) => {
           />
 
           <SelectFilters
-            text="bathrooms"
+            text={isSmall?'bath':'bathroom'}
             icon={Icon}
             isNumeric={true}
             variant="w-3.5 h-3.5 sm:w-4.5 h-4.5 mb-1"

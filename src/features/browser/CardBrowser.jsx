@@ -30,8 +30,8 @@ const CardBrowser = ({ view, data }) => {
           </span>
           {/* <span className="block px-3 py-1 text-white text-sm font-medium leading-5 capitalize bg-[#D4AF37] rounded-4xl">premium</span> */}
 
-          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-white hover:bg-gray-200 shadow-sm cursor-pointer">
-            <Heart className="h-4 w-4 text-[#9CA3AF]" />
+          <button className="flex items-center  justify-center w-8 h-8 text-[#9CA3AF] rounded-full bg-white hover:bg-gray-100  shadow-sm cursor-pointer hover:text-red-500">
+            <Heart className="h-4 w-4   text-inherit" />
           </button>
         </div>
         {/* IMAGE */}
