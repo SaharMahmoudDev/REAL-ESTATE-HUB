@@ -1,6 +1,8 @@
 import axios from "axios";
 const isDev=process.env.NODE_ENV==="development"
-const API_URL = isDev?"http://localhost:5174":'https://raw.githubusercontent.com/SaharMahmoudDev/REAL-ESTATE-HUB-DATA-API/refs/heads/master/db.json'
+const API_URL = isDev?"http://localhost:5174":'https://real-estate-hub-data-api.onrender.com'
+
+
 // https://raw.githubusercontent.com/SaharMahmoudDev/REAL-ESTATE-HUB-DATA-API/refs/heads/master/db.json
 
  function buildPropertyParams(filters = {}) {
