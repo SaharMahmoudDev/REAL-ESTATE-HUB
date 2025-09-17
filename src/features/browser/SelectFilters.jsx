@@ -70,7 +70,7 @@ const SelectFilters = ({
           "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
             {
               // paddingRight:0,
-p:0,
+// p:0,
               // px: 2,
               // py: 1,
               // background: "var(--color-secondary)",
@@ -85,14 +85,31 @@ p:0,
                 // py: 0.5,
               },
             },
-            "& .css-mp9f0v.css-mp9f0v.css-mp9f0v":{
-// background:'red !important'
-            },
+
+"& MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root .MuiSelect-select":{
+p:0
+},
+            
+             "& .MuiSelect-select": {
+      padding: 0,               
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "unset",       
+    },
+     "& .MuiOutlinedInput-root": {
+      borderRadius: 8,
+      p: 0,
+    },
+    "& .MuiOutlinedInput":{
+      p:0
+    },
           // "& .css-piust8": {
           //   background: "#F3F4F6",
           // },
           "& .MuiOutlinedInput-notchedOutline": {
             border: "none",
+          
           },
         }}
       >
