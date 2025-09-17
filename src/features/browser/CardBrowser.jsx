@@ -84,7 +84,7 @@ const CardBrowser = ({ view, data }) => {
         <Button
           as={Link}
           to="/"
-          variant="w-full block !bg-primary text-white mt-3"
+          variant=" w-full block  text-white mt-3"
         >
           view details
         </Button>

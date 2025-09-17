@@ -9,25 +9,24 @@ import { BaramsContext } from "../../context/ParamsProvider";
 
 // EXTERNAL ICONS
 import { Search } from "lucide-react";
-
+// import {Button} from "@mui/material";
 // CONSTANTS
 import {
   PRICE_RANGE_OPTIONS,
   PROPERTY_TYPES,
 } from "../../styles/constants/Options";
-
+import { Box } from "@mui/material";
 
 export const SearchBrowser = () => {
-  const {  setBarams } = useContext(BaramsContext);
+  const { setBarams } = useContext(BaramsContext);
 
-  
   const [draft, setDraft] = useState({
     type: null,
     price_gte: null,
     price_lte: null,
     city_like: null,
   });
-  
+
   return (
     <Section variant="!text-black">
       {/* CONTAINER HEADING & BUY & RENT BUTTONS */}
@@ -90,10 +89,25 @@ export const SearchBrowser = () => {
           }}
         />
 
-        <div className="w-full self-end">
+        {/* <Box
+          className="purple-interactive w-full self-end  rounded-lg "
+          // sx={{
+          //   bgcolor: "#6D28D9",
+          //   "&:hover": {
+          //     bgcolor: "#7C3AED", 
+          //     boxShadow: 4,
+          //   },
+          //   "&:active": {
+          //     bgcolor: "#5B21B6", 
+          //     boxShadow: "inset 0px 2px 4px rgba(0,0,0,0.3)", 
+          //     transform: "scale(0.97)", 
+          //   },
+          // }}
+        > */}
           <Button
             type="button"
-            variant="w-full py-2.5 sm:py-3.25 !bg-primary text-white text-base flex justify-center items-center"
+            variant="w-full h-12.5 text-white self-end  text-base flex justify-center items-center"
+            // py-2.5 sm:py-3.25 
             onClick={() => {
               setBarams((prev) => ({
                 ...prev,
@@ -107,7 +121,7 @@ export const SearchBrowser = () => {
             <Search className="h-5 w-5 me-1" />
             <span>search</span>
           </Button>
-        </div>
+        {/* </Box> */}
       </div>
     </Section>
   );

@@ -5,7 +5,7 @@ import Section from "../../components/ui/Section";
 import SelectFilters from "./SelectFilters";
 import Button from "../../components/ui/Button";
 import SelectSearch from "../../components/ui/SelectSearch";
- 
+
 // local Icons
 import Icon from "../../assets/photos/Vector (1).svg?react";
 
@@ -89,13 +89,14 @@ const FilterBrowser = ({ view, setView }) => {
             <div className="mb-1.5 flex-1">
               <SelectSearch
                 list={SORT_OPTIONS}
+                variantGroup="!h-10.5"
                 selectProps={{
                   sx: {
                     "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
                       {
-                        py: 1.3,
+                        // py: 1.3,
                         "@media (max-width:640px)": {
-                          py: 1.1,
+                          // py: 1.1,
                         },
                       },
                   },
@@ -117,9 +118,9 @@ const FilterBrowser = ({ view, setView }) => {
             {viewBtns.map(({ val, Icon, label }) => {
               return (
                 <Button
-                  key={val}
+                  key={label}
                   variant={`!p-1.5`}
-                  isActive={view === val}
+                  isActive={!view == val}
                   onClick={() => toggleButton(val)}
                   aria-pressed={val}
                   aria-label={label}

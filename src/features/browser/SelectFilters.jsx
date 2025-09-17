@@ -39,7 +39,7 @@ const SelectFilters = ({
   return (
     <>
       <Select
-      className="bg-secondary px-2 py-1 sm:px-3 sm:py-2"
+        className="gray-interactive  px-2 py-1 sm:px-3 sm:py-2 !rounded-lg"
         displayEmpty
         variant="outlined"
         value={value}
@@ -67,49 +67,18 @@ const SelectFilters = ({
           );
         }}
         sx={{
-          "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-            {
-              // paddingRight:0,
-// p:0,
-              // px: 2,
-              // py: 1,
-              // background: "var(--color-secondary)",
-              // background: "#F3F4F6",
-              borderRadius: 2,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
 
-              "@media (max-width:600px)": {
-                // px: 1,
-                // py: 0.5,
-              },
-            },
+          "& .MuiSelect-select": {
+            padding: 0,
+            paddingRight: "0 !important",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: "unset",
+          },
 
-"& MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root .MuiSelect-select":{
-p:0
-},
-            
-             "& .MuiSelect-select": {
-      padding: 0,               
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      minHeight: "unset",       
-    },
-     "& .MuiOutlinedInput-root": {
-      borderRadius: 8,
-      p: 0,
-    },
-    "& .MuiOutlinedInput":{
-      p:0
-    },
-          // "& .css-piust8": {
-          //   background: "#F3F4F6",
-          // },
           "& .MuiOutlinedInput-notchedOutline": {
             border: "none",
-          
           },
         }}
       >

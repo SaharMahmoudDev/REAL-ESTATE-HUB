@@ -25,6 +25,7 @@ export default function GroupedSelect({
   // onchange,
   isSort,
   onChangee,
+  variant
   // setValueSearch,
   // locationChange,
 }) {
@@ -55,11 +56,15 @@ export default function GroupedSelect({
     },
     "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
       {
-        py: 1.75,
+        // py: 1.75,
         "@media (max-width:640px)": {
-          py: 1.1,
+          // py: 1.1,
         },
       },
+       "& .MuiSelect-select": {
+        p:1,
+        // height:"1rem"
+       }
   };
   const mergedSx = { ...defaultSx, ...selectProps.sx };
 
@@ -69,9 +74,10 @@ export default function GroupedSelect({
     <div>
       <FormControl
         fullWidth
-        sx={{ minWidth: 150, background: "white", fontStyle: "normal" }}
+        sx={{ minWidth: 150, background: "white", fontStyle: "normal"}}
       >
         <Select
+        className={`h-12.5 ${variant}`}
           displayEmpty
           value={value}
           onChange={(e) => {

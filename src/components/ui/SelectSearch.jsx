@@ -20,6 +20,7 @@ const SelectSearch = ({
   defaultLabel,
   sort,
   order,
+  variantGroup,
   // sortSelect,
   onchange,
   isSort,
@@ -37,7 +38,7 @@ const SelectSearch = ({
 
       {isInput && (
         <Box
-          className="flex items-center  bg-white rounded-lg border border-[#E5E7EB]"
+          className=" h-12.5 flex items-center  bg-white rounded-lg border border-[#E5E7EB]"
           sx={{
             "&:hover": {
               boxShadow: 3,
@@ -46,13 +47,13 @@ const SelectSearch = ({
         >
           <MdLocationOn className="w-6 h-5 text-[#ADAEBC] ms-1.5" />
           <input
-            className={` w-full sm:p-3.25 p-2 bg-white rounded-lg outline-0 cursor-pointer placeholder:text-[#ADAEBC] text-lg leading-6  ${variant}`}
+            className={` w-full p-1 bg-white rounded-lg outline-0 cursor-pointer placeholder:text-[#ADAEBC] text-lg leading-6  ${variant}`}
             onChange={locationChange}
             {...props}
           ></input>
         </Box>
       )}
-
+{/* sm:p-3.25 p-2 */}
       {!isInput && (
         <GroupedSelect
           list={list}
@@ -62,6 +63,7 @@ const SelectSearch = ({
           defaultLabel={defaultLabel}
           sort={sort}
           order={order}
+          variant={variantGroup}
           // sortSelect={sortSelect}
           // onchange={onchange}
           isSort={isSort}

@@ -3,7 +3,7 @@ import React from "react";
 const Section = ({ children, variant = "", ...props }) => {
   return (
     <section
-      className={`w-full py-3 sm:py-8 text-white bg-white border border-b-[#E5E7EB]
+      className={`w-full  py-3 sm:py-8 text-white bg-white  border-b border-b-[#E5E7EB]
    ${variant}`}
       {...props}
     >
