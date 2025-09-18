@@ -1,22 +1,29 @@
 import React from "react";
 
-// IMGES
-// import propertyImg from "../../assets/photos/img.png";
-// COMPONENTS FROM REACT
-import { Link } from "react-router-dom";
-
-//  LOCALAL COMPONENTS
+//  LOCAL COMPONENTS
 import Button from "../../components/ui/Button";
 import IconLabel from "../../components/ui/IconLabel";
 import DetailsRooms from "./DetailsRooms";
+import { cardVariants } from "../../animations/BrowserAnimation";
 
-// LOCAL COMPONENTS
+//EXTERNAL COMPONENTS
+import { Link } from "react-router-dom";
+import { delay, motion } from "framer-motion";
+
+// LOCAL Icons
 import { MdLocationOn } from "react-icons/md";
 import { Heart } from "lucide-react";
 
-const CardBrowser = ({ view, data }) => {
+const CardBrowser = ({ view, data, i }) => {
+  
+
   return (
-    <div
+    <motion.div
+      variants={cardVariants(i)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.5 }}
+      exit="exit"
       className={`bg-white border border-[#E5E7EB] rounded-xl overflow-hidden shadow-sm ${
         !view && "md:w-2xl "
       }`}
@@ -66,7 +73,6 @@ const CardBrowser = ({ view, data }) => {
         {/* LOCATION*/}
 
         <IconLabel
-          // label="Downtown District, city Center"
           label={data.address}
           icon={MdLocationOn}
           variantDiv="mb-3 gap-2"
@@ -81,15 +87,11 @@ const CardBrowser = ({ view, data }) => {
           areaSqm={data.area_sqm}
         />
 
-        <Button
-          as={Link}
-          to="/"
-          variant=" w-full block  text-white mt-3"
-        >
+        <Button as={Link} to="/" variant=" w-full block  text-white mt-3">
           view details
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

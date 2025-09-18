@@ -2,14 +2,21 @@ import React from "react";
 
 // LOCAL COMPONENTS
 import Section from "../../components/ui/Section";
+import { cardVariants, layoutVariants } from './../../animations/BrowserAnimation';
 
 //  EXTARNAL COMPONENTS
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { motion } from "framer-motion";
 
 const PaginationSection = ({count,onChange}) => {
   return (
     <Section variant="!border-b-0">
+      <motion.div 
+        variants={ layoutVariants}
+      initial="hidden"
+          whileInView="show"
+          exit="exit">
       <Stack spacing={2}>
         <Pagination
         // page={page}
@@ -34,6 +41,7 @@ const PaginationSection = ({count,onChange}) => {
           }}
         />
       </Stack>
+      </motion.div>
     </Section>
   );
 };

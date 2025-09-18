@@ -1,20 +1,33 @@
-import React from 'react'
-import BrowserPage from '../pages/BrowserPage'
-import Section from '../components/ui/Section';
-import Navbar from './../components/common/Navbar';
-import { Outlet } from 'react-router-dom';
-import Footer from './../components/common/Footer';
-import ScrollTopButton from '../components/ui/ScrollTopButton';
+import React from "react";
+// LOCAL COMPONENTS
+import Navbar from "./../components/common/Navbar";
+import { layoutVariants } from "../animations/BrowserAnimation";
+import Footer from "./../components/common/Footer";
+
+// EXTARNAL COMPONENTS
+import { Outlet, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Layout = () => {
-  return (<>
-    {/* <Section variant="border-b-0"> */}
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
-      {/* </Section> */}
-      </>
-  )
-}
+  const locatin = useLocation();
+  return (
+    <>
+      <Navbar />
+      <AnimatePresence mode="wait">
+        <motion.main
+          key={locatin.pathname}
+          variants={layoutVariants}
+          initial="hidden"
+          whileInView="show"
+          exit="exit"
+        >
+          <Outlet />
+        </motion.main>
+      </AnimatePresence>
+      <Footer />
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
