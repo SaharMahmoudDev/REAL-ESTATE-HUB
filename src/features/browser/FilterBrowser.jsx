@@ -88,23 +88,23 @@ const FilterBrowser = ({ view, setView }) => {
           className={`${flexBetweenCenter} justify-between capitalize gap-1.5 sm:gap-3 basis-full md:basis-89`}
         >
           {/* Container Sort  */}
-          <div className="flex justify-between items-center gap-1.5 sm:gap-3 md:flex-1">
+          <div className="flex justify-between items-center flex-wrap gap-1.5 sm:gap-3 md:flex-1">
             <span className={classNameSortFilter}>sort by:</span>
             <div className="mb-1.5 flex-1">
               <SelectSearch
                 list={SORT_OPTIONS}
                 variantGroup="!h-10.5"
-                selectProps={{
-                  sx: {
-                    "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                      {
-                        // py: 1.3,
-                        "@media (max-width:640px)": {
-                          // py: 1.1,
-                        },
-                      },
-                  },
-                }}
+                // selectProps={{
+                //   sx: {
+                //     "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                //       {
+                //         // py: 1.3,
+                //         "@media (max-width:640px)": {
+                //           // py: 1.1,
+                //         },
+                //       },
+                //   },
+                // }}
                 defaultLabel="Price: Low to High"
                 defaultValue="price-asc"
                 sort="_sort"

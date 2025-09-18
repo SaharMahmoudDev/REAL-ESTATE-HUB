@@ -6,7 +6,8 @@ const RangeOption = ({onChange,handleCommit,valueSlider}) => {
   
 
   return (
-    <Box className='w-full sm:w-md py-1 px-2'>
+    // <div className=" h-full bg-red-500 flex justify-center items-center ">
+    <Box className='w-screen sm:w-md py-1 px-2 '>
       <Typography gutterBottom>Area (m²)</Typography>
       <Slider
         value={valueSlider}
@@ -18,12 +19,18 @@ const RangeOption = ({onChange,handleCommit,valueSlider}) => {
         step={10}
         sx={{
           color: "var(--color-primary)",
+
+          // '& .MuiPaper-root':{
+          //   background:'red !important',
+          //   minHeight:'900px'
+          // }
         }}
       />
       <Typography variant="body2">
         Selected: {valueSlider[0]} m² - {valueSlider[1]} m²
       </Typography>
     </Box>
+    // </div>
   );
 };
 

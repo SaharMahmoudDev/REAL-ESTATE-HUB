@@ -85,21 +85,25 @@ const SelectFilters = ({
         {isNumeric == true ? (
           Array.from({ length: to - from + 1 }, (_, i) =>
             i == 0 ? (
-              <MenuItem key={i} value="">
+              <MenuItem key={i} value="" className="!bg-active-pri">
                 all
               </MenuItem>
             ) : (
-              <MenuItem key={i} value={i + from - 1}>
+              <MenuItem key={i} value={i + from - 1} className=" w-screen ">
                 {i + from - 1}
               </MenuItem>
             )
           )
         ) : (
+          <MenuItem disableRipple>
+  
           <RangeOption
             onChange={handleChange}
             handleCommit={handleCommit}
             valueSlider={valueRange}
           />
+</MenuItem>
+
         )}
       </Select>
     </>
