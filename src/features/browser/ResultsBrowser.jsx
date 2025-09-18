@@ -24,7 +24,7 @@ const ResultsBrowser = ({ view }) => {
   }
 
   return (
-    <Section>
+    <Section variant="border-b-0">
       {/* HEADING */}
       <Heading
         label="Properties for Sale"

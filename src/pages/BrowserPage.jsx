@@ -10,7 +10,7 @@ const BrowserPage = () => {
 
   return (
     <>
-    <Section variant="border-b-0">
+    <Section variant="border-b-0 !p-0">
       <SearchBrowser />
       <FilterBrowser view={view} setView={setView} />
       <ResultsBrowser view={view} setView={setView} />

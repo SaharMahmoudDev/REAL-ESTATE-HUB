@@ -16,23 +16,31 @@ import { QueryClientProvider } from "@tanstack/react-query";
 // FUNCTIONS
 import { queryClient } from "./lib/queryClient";
 import { ParamsProvider } from "./context/ParamsProvider";
-import { ReactQueryDevtools } from './../node_modules/@tanstack/react-query-devtools/src/index';
+import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devtools/src/index";
 import ScrollTopButton from "./components/ui/ScrollTopButton";
+import Layout from "./layouts/Layout";
+import { BrowserRouter, Outlet, Router } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <ParamsProvider>
-    <QueryClientProvider client={queryClient}>
-
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <BrowserPage />
-        <ScrollTopButton/>
-      </ThemeProvider>
-              <ReactQueryDevtools initialIsOpen={false} buttonPosition="bottom-left" />
-
-      </QueryClientProvider>
+      <ParamsProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+              <Routes>
+                <Route path="/" element={<Layout />} >
+                <Route path="buyrent" element={<BrowserPage />} />
+                </Route>
+              </Routes>
+          </ThemeProvider>
+          <ReactQueryDevtools
+            initialIsOpen={false}
+            buttonPosition="bottom-left"
+          />
+        </QueryClientProvider>
       </ParamsProvider>
     </>
   );
