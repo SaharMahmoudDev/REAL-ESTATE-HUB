@@ -32,7 +32,7 @@ function App() {
             <CssBaseline />
               <Routes>
                 <Route path="/" element={<Layout />} >
-                <Route path="buyrent" element={<BrowserPage />} />
+                <Route path="/buyrent" element={<BrowserPage />} />
                 </Route>
               </Routes>
           </ThemeProvider>
