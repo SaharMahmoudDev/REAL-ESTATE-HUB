@@ -18,7 +18,7 @@ const RangeOption = ({onChange,handleCommit,valueSlider}) => {
         max={1000}
         step={10}
         sx={{
-          color: "var(--color-primary)",
+          // color: "var(--color-primary)",
 
           // '& .MuiPaper-root':{
           //   background:'red !important',

@@ -80,16 +80,19 @@ const SelectFilters = ({
           "& .MuiOutlinedInput-notchedOutline": {
             border: "none",
           },
+          "& MuiPaper-root":{
+            background:'red !important'
+          }
         }}
       >
         {isNumeric == true ? (
           Array.from({ length: to - from + 1 }, (_, i) =>
             i == 0 ? (
-              <MenuItem key={i} value="" className="!bg-active-pri">
+              <MenuItem key={i} value="" className="w-screen sm:!w-auto !justify-center sm:!justify-start">
                 all
               </MenuItem>
             ) : (
-              <MenuItem key={i} value={i + from - 1} className=" w-screen ">
+              <MenuItem key={i} value={i + from - 1} className=" w-screen sm:!w-auto !justify-center sm:!justify-start">
                 {i + from - 1}
               </MenuItem>
             )

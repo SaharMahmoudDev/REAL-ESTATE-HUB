@@ -114,7 +114,7 @@ onChangee?.(e.target.value)
 
           {!isGroup &&
             list.map((item, idx) => (
-              <MenuItem
+              <MenuItem 
                 key={`hdr-${idx}`}
                 value={item.value ?? item}
                 sx={{ textTransform: "capitalize" }}

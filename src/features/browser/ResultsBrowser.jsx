@@ -7,14 +7,17 @@ import { Heading } from "../../components/ui/Heading";
 import CardBrowser from "./CardBrowser";
 import { usePropertiesQuery } from "../../hooks/usePropertiesQuery";
 import { BaramsContext } from "../../context/ParamsProvider";
+import { CircularProgress } from "@mui/material";
 
 const ResultsBrowser = ({ view }) => {
   const { params, setBarams } = useContext(BaramsContext);
 
-  const { isLoading, isError, error, data } = usePropertiesQuery(params);
+  const { isLoading, isFetching,isError, error, data } = usePropertiesQuery(params);
   
-  if (isLoading) {
-    return <div> isloading</div>;
+  if (isLoading||isFetching) {
+    return <div className="min-h-[600px] flex justify-center items-center"> 
+      <CircularProgress />
+    </div>;
   }
   if (isError) {
     return <div> {error.message}</div>;

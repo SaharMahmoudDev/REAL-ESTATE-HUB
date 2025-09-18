@@ -17,6 +17,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { ParamsProvider } from "./context/ParamsProvider";
 import { ReactQueryDevtools } from './../node_modules/@tanstack/react-query-devtools/src/index';
+import ScrollTopButton from "./components/ui/ScrollTopButton";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserPage />
+        <ScrollTopButton/>
       </ThemeProvider>
               <ReactQueryDevtools initialIsOpen={false} buttonPosition="bottom-left" />
 
