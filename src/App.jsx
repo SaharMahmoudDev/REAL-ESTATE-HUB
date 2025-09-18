@@ -30,11 +30,12 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-              <Routes>
-                <Route path="/" element={<Layout />} >
-                <Route path="/buyrent" element={<BrowserPage />} />
-                </Route>
-              </Routes>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route path="/buy" element={<BrowserPage />} />
+                <Route path="/rent" element={<BrowserPage />} />
+              </Route>
+            </Routes>
           </ThemeProvider>
           <ReactQueryDevtools
             initialIsOpen={false}

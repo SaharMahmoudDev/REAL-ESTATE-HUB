@@ -91,8 +91,8 @@ const Navbar = () => {
                   }}
                 >
 
-<LiNavbar item='Buy' href='buyrent'/>
-<LiNavbar item='Rent' href='buyrent'/>
+<LiNavbar item='Buy' href='/buy'/>
+<LiNavbar item='Rent' href='/rent'/>
 <LiNavbar item='Sell' href='#'/>
 <LiNavbar item='Regions' href='#'/>
 
@@ -286,8 +286,8 @@ const Navbar = () => {
                       }
                     }}
                   >
-<LiNavbarMobile item='buy' href='buyrent' closeSidebar={closeSidebar} />
-<LiNavbarMobile item='rent' href='buyrent' closeSidebar={closeSidebar} />
+<LiNavbarMobile item='buy' href='/buy' closeSidebar={closeSidebar} />
+<LiNavbarMobile item='rent' href='/rent' closeSidebar={closeSidebar} />
 <LiNavbarMobile item='sell' href='#' closeSidebar={closeSidebar} />
 <LiNavbarMobile item='Regions' href='#' closeSidebar={closeSidebar} />
 
