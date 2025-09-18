@@ -6,6 +6,7 @@ import { FaRegHeart, FaTimes } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
 import { HiMenuAlt3 } from "react-icons/hi";
 import LiNavbar from "../ui/LiNavbar";
+import LiNavbarMobile from "../ui/LiNavbarMobile";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
     setIsSidebarOpen(false);
   };
 
-  const navItems = ['Buy', 'Rent', 'Sell', 'Regions'];
+  // const navItems = ['Buy', 'Rent', 'Sell', 'Regions'];
 
   return (
     <>
@@ -49,7 +50,7 @@ const Navbar = () => {
             >
               <motion.a 
                 className="flex items-center gap-1" 
-                href="#"
+                href="/"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -285,7 +286,13 @@ const Navbar = () => {
                       }
                     }}
                   >
-                    {navItems.map((item, index) => (
+<LiNavbarMobile item='buy' href='buyrent' closeSidebar={closeSidebar} />
+<LiNavbarMobile item='rent' href='buyrent' closeSidebar={closeSidebar} />
+<LiNavbarMobile item='sell' href='#' closeSidebar={closeSidebar} />
+<LiNavbarMobile item='Regions' href='#' closeSidebar={closeSidebar} />
+
+
+                    {/* {navItems.map((item, index) => (
                       <motion.li
                         key={item}
                         variants={{
@@ -311,7 +318,7 @@ const Navbar = () => {
                           {item}
                         </motion.a>
                       </motion.li>
-                    ))}
+                    ))} */}
                   </motion.ul>
                 </nav>
 
