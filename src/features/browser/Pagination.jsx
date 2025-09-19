@@ -27,7 +27,7 @@ const PaginationSection = ({ count, onChange, page }) => {
             onChange={(_, p) => onChange(p)}
             variant="outlined"
             shape="rounded"
-            size={isSmall?"small":'large'}
+            size={isSmall?"medium":'large'}
             sx={{
               "& ul": { justifyContent: "center", gap: "4px 2px" },
               "& .MuiPaginationItem-root": {
