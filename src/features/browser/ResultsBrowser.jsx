@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 
 //  LOCAL COMPONENTS
 import Section from "../../components/ui/Section";
@@ -10,10 +10,12 @@ import { BaramsContext } from "../../context/ParamsProvider";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress } from "@mui/material";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const ResultsBrowser = ({ view }) => {
+  const topRef = useRef(null);
+
   const { params, setBarams } = useContext(BaramsContext);
 
   const { isLoading, isFetching, isError, error, data } =
@@ -35,37 +37,43 @@ const ResultsBrowser = ({ view }) => {
   }`;
 
   return (
-    <Section variant="border-b-0">
+    <Section ref={topRef} variant="border-b-0">
       {/* HEADING */}
-      <div>
-        <Heading
-          label="Properties for Sale"
-          text={`showing ${data.totalCount} results`}
-          variant="!font-semibold !text-xl !leading-7 "
-        />
-        {/* REAL STATE RESULTS */}
-        <div
-          className={`mt-6 transition grid ${
-            view
-              ? "grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
-              : "grid-cols-1 place-items-center "
-          } gap-6`}
-        >
-          {data.data.map((item, ind) => (
-            <CardBrowser key={item.id} view={view} data={item} i={ind} />
-          ))}
-        </div>
-
-        {/* PAGINATION */}
-        {data.totalCount > 0 && (
-          <PaginationSection
-            count={data.totalPages}
-            onChange={(nextPage) =>
-              setBarams((prev) => ({ ...prev, _page: nextPage }))
-            }
-          />
-        )}
+      {/* <div className="overflow-hidden"> */}
+      <Heading
+        label="Properties for Sale"
+        text={`showing ${data.totalCount} results`}
+        variant="!font-semibold !text-xl !leading-7 "
+      />
+      {/* REAL STATE RESULTS */}
+      <div
+        
+        className={`mt-6 transition grid overflow-x-hidden ${
+          view
+            ? "grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
+            : "grid-cols-1 place-items-center "
+        } gap-6`}
+      >
+        {data.data.map((item, ind) => (
+          <CardBrowser key={item.id} view={view} data={item} i={ind} />
+        ))}
       </div>
+
+      {/* PAGINATION */}
+      {data.totalCount > 0 && (
+        <PaginationSection
+          count={data.totalPages}
+          onChange={(nextPage) => {
+            setBarams((prev) => ({ ...prev, _page: nextPage }));
+            topRef.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+          page={params._page}
+        />
+      )}
+      {/* </div> */}
     </Section>
   );
 };

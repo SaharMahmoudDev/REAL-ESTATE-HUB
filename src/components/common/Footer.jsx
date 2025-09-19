@@ -75,7 +75,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white relative overflow-hidden">
-              <ScrollTopButton/>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-5">

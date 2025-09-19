@@ -84,3 +84,7 @@ export const SORT_OPTIONS = [
   { value: "listed_at-desc", label: "Newest" },
   { value: "listed_at-asc", label: "Oldest" },
 ];
+export const PURPOSE_TO_MODE = {
+  buy:  "FOR_SALE",
+  rent: "FOR_RENT",
+};

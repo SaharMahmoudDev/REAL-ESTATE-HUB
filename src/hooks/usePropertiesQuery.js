@@ -16,6 +16,7 @@ export function usePropertiesQuery(params) {
     },
 
     placeholderData: keepPreviousData,
+    keepPreviousData: true,
   });
   return query;
 }

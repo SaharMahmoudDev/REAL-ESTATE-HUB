@@ -35,7 +35,7 @@ export default function GroupedSelect({
     if (isSort == true) {
       setValue(e.target.value);
                     setBarams((prev) => ({ ...prev, [sort]: e.target.value.split("-")[0], 
-                      [order]: e.target.value.split("-")[1].trim().toLowerCase()
+                      [order]: e.target.value.split("-")[1].trim().toLowerCase(),  _page:1
                     }))
 
     }

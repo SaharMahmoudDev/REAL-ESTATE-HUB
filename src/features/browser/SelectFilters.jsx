@@ -33,6 +33,7 @@ const SelectFilters = ({
       ...prev,
       area_sqm_gte: newValue[0],
       area_sqm_lte: newValue[1],
+      _page:1
     }));
   };
 
@@ -45,7 +46,7 @@ const SelectFilters = ({
         value={value}
         onChange={(e) => {
           isNumeric && setValue(e.target.value);
-          setBarams((prev) => ({ ...prev, [keyParams]: e.target.value }));
+          setBarams((prev) => ({ ...prev, [keyParams]: e.target.value ,  _page:1}));
         }}
         {...props}
         IconComponent={null}

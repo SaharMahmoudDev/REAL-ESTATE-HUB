@@ -32,8 +32,15 @@ function App() {
             <CssBaseline />
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route path="/buy" element={<BrowserPage />} />
-                <Route path="/rent" element={<BrowserPage />} />
+                {/* <Route path=":statusRoute(buy|rent)" element={<BrowserPage/>} /> */}
+                <Route
+                  path="/buy"
+                  element={<BrowserPage mode="FOR_SALE"/>}
+                />
+                <Route
+                  path="/rent"
+                  element={<BrowserPage mode="FOR_RENT" />}
+                />
               </Route>
             </Routes>
           </ThemeProvider>

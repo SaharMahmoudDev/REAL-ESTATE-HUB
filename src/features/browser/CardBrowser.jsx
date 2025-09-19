@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 //  LOCAL COMPONENTS
 import Button from "../../components/ui/Button";
@@ -15,25 +15,32 @@ import { MdLocationOn } from "react-icons/md";
 import { Heart } from "lucide-react";
 
 const CardBrowser = ({ view, data, i }) => {
-  
+  const stylePrimum = useMemo(() => {
+    const pp=data.badge.toLowerCase();
+ return pp=='new'?'bg-[#EF4444]':pp=='primum'?'bg-[#D4AF37]':'bg-primary'
+
+  }, [data]);
 
   return (
     <motion.div
       variants={cardVariants(i)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.5 }}
+      viewport={{ once: false, amount: 0.3 }}
       exit="exit"
-      className={`bg-white border border-[#E5E7EB] rounded-xl overflow-hidden shadow-sm ${
-        !view && "md:w-2xl "
+      layout="position"
+      className={`max-w-2xl bg-white border border-[#E5E7EB] rounded-xl overflow-hidden shadow-sm ${
+        !view && "md:w-2xl"
       }`}
     >
       {/*IMGE CONTAINIER  */}
       <div className="relative rounded-t-xl ">
         {/* FEATURED & HEART ICON*/}
         <div className=" absolute top-3 left-3 right-3  flex justify-between items-center flex-wrap">
-          <span className="block px-3 py-1 text-white text-sm font-medium leading-5 capitalize bg-primary rounded-4xl">
-            featured
+          <span
+            className={`block px-3 py-1 text-white text-sm font-medium leading-5 capitalize  ${stylePrimum} rounded-4xl`}
+          >
+            {data.badge}
           </span>
           {/* <span className="block px-3 py-1 text-white text-sm font-medium leading-5 capitalize bg-[#D4AF37] rounded-4xl">premium</span> */}
 

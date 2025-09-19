@@ -8,6 +8,7 @@ import Footer from "./../components/common/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import ScrollTopButton from "../components/ui/ScrollTopButton";
 
 const Layout = () => {
   const locatin = useLocation();
@@ -16,15 +17,17 @@ const Layout = () => {
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.main
-          key={locatin.pathname}
+          // key={locatin.pathname}
           variants={layoutVariants}
           initial="hidden"
           whileInView="show"
-          exit="exit"
+          // animate='show'
+          // exit="exit"
         >
           <Outlet />
         </motion.main>
       </AnimatePresence>
+      <ScrollTopButton/>
       <Footer />
     </>
   );

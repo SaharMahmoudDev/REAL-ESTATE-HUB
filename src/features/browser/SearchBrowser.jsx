@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // LOCAL COMPONENTS
 import Section from "../../components/ui/Section";
@@ -16,16 +16,39 @@ import {
   PROPERTY_TYPES,
 } from "../../styles/constants/Options";
 import { Box } from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export const SearchBrowser = () => {
-  const { setBarams } = useContext(BaramsContext);
-
+export const SearchBrowser = ({mode}) => {
+  const { Params,setBarams } = useContext(BaramsContext);
+ const navigate = useNavigate();
+  const location = useLocation();
   const [draft, setDraft] = useState({
     type: null,
     price_gte: null,
     price_lte: null,
     city_like: null,
   });
+
+    const [current, setCurrent] = useState("buy"); 
+
+
+
+ const handleClick = (modee) => {
+    setCurrent(modee);
+    navigate(`/${modee}`);
+console.log(mode)
+  };
+useEffect(()=>{
+   if (location.pathname.startsWith("/rent")) {
+
+      setCurrent("rent");
+    } else {
+      setCurrent("buy");
+    }
+  }, [location.pathname]);
+  // setToggleRentBuyButt(Params.status??'')
+  // console.log(Params.status)
+// },[])
 
   return (
     <Section variant="!text-black">
@@ -37,19 +60,24 @@ export const SearchBrowser = () => {
         />
         <div className="mx-auto sm:mx-0 sm:ms-auto">
           <Button
-            variant="me-3 !bg-primary text-white"
-            onClick={() =>
+            // variant="me-3 !bg-primary text-white"
+                        variant="me-3 "
+        isActive={current !== "buy"}
+            onClick={() =>{
               setBarams((prev) => ({ ...prev, status: "FOR_SALE" }))
-            }
+handleClick('buy')              
+            }}
           >
             buy
           </Button>
 
           <Button
-            variant=" text-[#4B5563]"
-            onClick={() =>
+            // variant=" text-[#4B5563]"
+                        variant=""
+        isActive={current !== "rent"}
+            onClick={() =>{
               setBarams((prev) => ({ ...prev, status: "FOR_RENT" }))
-            }
+handleClick('rent')            }}
           >
             rent
           </Button>
@@ -115,6 +143,7 @@ export const SearchBrowser = () => {
                 price_gte: draft.price_gte,
                 city_like: draft.city_like,
                 type: draft.type,
+                _page:1
               }));
             }}
           >
