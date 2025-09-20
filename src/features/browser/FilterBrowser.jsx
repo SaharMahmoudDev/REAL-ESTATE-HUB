@@ -24,8 +24,6 @@ const FilterBrowser = ({ view, setView }) => {
   };
   const isSmall = useMediaQuery("(max-width:600px)");
 
-
-
   const flexBetweenCenter = ["flex", " items-center", "flex-wrap"].join(" ");
   const classNameSortFilter = [
     "block",
@@ -46,70 +44,59 @@ const FilterBrowser = ({ view, setView }) => {
       {/* Container Filters & Sort */}
       <div className={`text-black ${flexBetweenCenter} justify-between gap-4`}>
         {/*  Container Filters*/}
-        <div className={`capitalize ${flexBetweenCenter} gap-1.5 sm:gap-3 `}>
+        <div className={`capitalize flex  items-center gap-1.5 sm:gap-3 `}>
           <span className={classNameSortFilter}>filters:</span>
-
-          <SelectFilters
-            text={isSmall?'bed':'bedroom'}
-            icon={HotelIcon}
-            isNumeric={true}
-            iconProps={{
-              sx: {
-                fontSize: {
-                  xs: 22,
-                  "@media (max-width:600px)": { fontSize: 16 },
+          <div className="flex justify-start items-center flex-wrap gap-1.5 sm:gap-3">
+            <SelectFilters
+              text={isSmall ? "bed" : "bedroom"}
+              icon={HotelIcon}
+              isNumeric={true}
+              iconProps={{
+                sx: {
+                  fontSize: {
+                    xs: 22,
+                    "@media (max-width:600px)": { fontSize: 16 },
+                  },
                 },
-              },
-            }}
-            from={1}
-            to={10}
-            keyParams="bedrooms"
-          />
+              }}
+              from={1}
+              to={10}
+              keyParams="bedrooms"
+            />
 
-          <SelectFilters
-            text={isSmall?'bath':'bathroom'}
-            icon={Icon}
-            isNumeric={true}
-            variant="w-3.5 h-3.5 sm:w-4.5 h-4.5 mb-1"
-            from={1}
-            to={10}
-            keyParams="bathrooms"
-          />
-          <SelectFilters
-            text="size"
-            icon={FaExpandArrowsAlt}
-            variant="!text-xm sm:text-sm !font-extrabold "
-            isNumeric={false}
-          />
+            <SelectFilters
+              text={isSmall ? "bath" : "bathroom"}
+              icon={Icon}
+              isNumeric={true}
+              variant="w-3.5 h-3.5 sm:w-4.5 h-4.5 mb-1"
+              from={1}
+              to={10}
+              keyParams="bathrooms"
+            />
+            <SelectFilters
+              text="size"
+              icon={FaExpandArrowsAlt}
+              variant="!text-xm sm:text-sm !font-extrabold "
+              isNumeric={false}
+            />
+          </div>
         </div>
 
         {/* Container Sort & View */}
         <div
-          className={`${flexBetweenCenter} justify-between capitalize gap-1.5 sm:gap-3 basis-full md:basis-89`}
+          className={`${flexBetweenCenter} justify-between capitalize gap-1.5 sm:gap-3 basis-full lg:basis-89`}
         >
           {/* Container Sort  */}
-          <div className="flex justify-between items-center flex-wrap gap-1.5 sm:gap-3 md:flex-1">
+          <div className="flex justify-between items-center flex-wrap gap-1.5 sm:gap-3 lg:flex-1">
             <span className={classNameSortFilter}>sort by:</span>
             <div className="mb-1.5 flex-1">
               <SelectSearch
                 list={SORT_OPTIONS}
                 variantGroup="!h-10.5"
-                // selectProps={{
-                //   sx: {
-                //     "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                //       {
-                //         // py: 1.3,
-                //         "@media (max-width:640px)": {
-                //           // py: 1.1,
-                //         },
-                //       },
-                //   },
-                // }}
                 defaultLabel="Price: Low to High"
                 defaultValue="price-asc"
                 sort="_sort"
                 order="_order"
-                // sortSelect={true}
                 isSort={true}
               />
             </div>

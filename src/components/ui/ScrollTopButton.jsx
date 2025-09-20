@@ -27,7 +27,6 @@ export default function ScrollTopButton() {
       <Fab
         className="bg-gradient-to-r from-blue-500 to-purple-700 !text-white hover:bg-gradient-to-l
       transition"
-        // color="primary"
         onClick={scrollToTop}
         sx={{
           position: "fixed",

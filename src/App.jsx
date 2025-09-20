@@ -1,27 +1,24 @@
 import React from "react";
 import "./index.css";
+// LOCAL COMPONENTS
+import { ParamsProvider } from "./context/ParamsProvider";
+import Layout from "./layouts/Layout";
 
 // EXTERNAL COMPONENTS
-// import { ThemeProvider } from "styled-components";
 import { ThemeProvider } from "@mui/material/styles";
-
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 import { theme } from "./styles/theme";
+import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devtools/src/index";
 
 // PAGES
 import BrowserPage from "./pages/BrowserPage";
 
-// EXTERNAL COMPONENTS
-import { QueryClientProvider } from "@tanstack/react-query";
 // FUNCTIONS
 import { queryClient } from "./lib/queryClient";
-import { ParamsProvider } from "./context/ParamsProvider";
-import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devtools/src/index";
-import ScrollTopButton from "./components/ui/ScrollTopButton";
-import Layout from "./layouts/Layout";
-import { BrowserRouter, Outlet, Router } from "react-router-dom";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -32,7 +29,6 @@ function App() {
             <CssBaseline />
             <Routes>
               <Route path="/" element={<Layout />}>
-                {/* <Route path=":statusRoute(buy|rent)" element={<BrowserPage/>} /> */}
                 <Route
                   path="/buy"
                   element={<BrowserPage mode="FOR_SALE"/>}

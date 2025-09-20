@@ -12,11 +12,9 @@ export const theme = createTheme({
       ".purple-interactive": {
         backgroundColor: "var(--color-primary)",
         color: "#fff",
-        // borderRadius: 8,
         transition:
           "transform 120ms ease, box-shadow 120ms ease, background 120ms ease",
         "&:hover": {
-          // backgroundColor: "var(--color-hover-pri)",
           boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
         },
         "&:active": {
@@ -29,7 +27,6 @@ export const theme = createTheme({
       ".gray-interactive": {
         backgroundColor: "var(--color-secondary)",
         color: "#111", 
-        // borderRadius: 8,
         transition:
           "transform 120ms ease, box-shadow 120ms ease, background 120ms ease",
         "&:hover": {
@@ -47,15 +44,3 @@ export const theme = createTheme({
 }
 
 });
-// sx={{
-//   bgcolor: "#6D28D9",
-//   "&:hover": {
-//     bgcolor: "#7C3AED",
-//     boxShadow: 4,
-//   },
-//   "&:active": {
-//     bgcolor: "#5B21B6",
-//     boxShadow: "inset 0px 2px 4px rgba(0,0,0,0.3)",
-//     transform: "scale(0.97)",
-//   },
-// }}

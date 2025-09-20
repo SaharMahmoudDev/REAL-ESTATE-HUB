@@ -1,6 +1,7 @@
 import * as React from "react";
 // LOCAL COMPONENTS
 import { BaramsContext } from "../../context/ParamsProvider";
+import { useResponsiveMenuProps } from "../../hooks/useResponsiveMenuProps";
 
 // EXTARNAL COMPONENTS
 import MenuItem from "@mui/material/MenuItem";
@@ -21,23 +22,23 @@ export default function GroupedSelect({
   defaultLabel,
   sort,
   order,
-  // sortSelect,
-  // onchange,
   isSort,
   onChangee,
-  variant
-  // setValueSearch,
-  // locationChange,
+  variant,
 }) {
-  const { setBarams} = React.useContext(BaramsContext);
+  const menuProps = useResponsiveMenuProps();
+
+  const { setBarams } = React.useContext(BaramsContext);
 
   const updateKeySortOrder = (sort, order, e) => {
     if (isSort == true) {
       setValue(e.target.value);
-                    setBarams((prev) => ({ ...prev, [sort]: e.target.value.split("-")[0], 
-                      [order]: e.target.value.split("-")[1].trim().toLowerCase(),  _page:1
-                    }))
-
+      setBarams((prev) => ({
+        ...prev,
+        [sort]: e.target.value.split("-")[0],
+        [order]: e.target.value.split("-")[1].trim().toLowerCase(),
+        _page: 1,
+      }));
     }
   };
   const defaultSx = {
@@ -54,17 +55,10 @@ export default function GroupedSelect({
       borderColor: "#E5E7EB",
       borderWidth: 1.5,
     },
-    "& .css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-      {
-        // py: 1.75,
-        "@media (max-width:640px)": {
-          // py: 1.1,
-        },
-      },
-       "& .MuiSelect-select": {
-        p:1,
-        // height:"1rem"
-       }
+
+    "& .MuiSelect-select": {
+      p: 1,
+    },
   };
   const mergedSx = { ...defaultSx, ...selectProps.sx };
 
@@ -74,32 +68,31 @@ export default function GroupedSelect({
     <div>
       <FormControl
         fullWidth
-        sx={{ minWidth: 150, background: "white", fontStyle: "normal"}}
+        sx={{ minWidth: 150, background: "white", fontStyle: "normal" }}
       >
         <Select
-        className={`h-12.5 ${variant}`}
+          className={`h-12.5 ${variant}`}
           displayEmpty
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
-onChangee?.(e.target.value)
+            onChangee?.(e.target.value);
             updateKeySortOrder(sort, order, e);
-          
           }}
           id="grouped-select"
           SelectDisplayProps={{
             "aria-labelledby": "grouped-select-label",
           }}
           sx={mergedSx}
+          MenuProps={menuProps}
         >
-          
           <MenuItem value={isSort ? defaultValue : ""} className="capitalize">
             {defaultLabel}
           </MenuItem>
           {isGroup &&
             list.flatMap((group, gIdx) => [
-              <MyListSubheader key={`hdr-${gIdx}`}>
-                {group.group}
+              <MyListSubheader key={`hdr-${gIdx}`} sx={{ fontWeight:'900',color:'black'}}>
+                {`.${group.group}`}
               </MyListSubheader>,
               ...group.options.map((opt, idx) => (
                 <MenuItem
@@ -114,7 +107,7 @@ onChangee?.(e.target.value)
 
           {!isGroup &&
             list.map((item, idx) => (
-              <MenuItem 
+              <MenuItem
                 key={`hdr-${idx}`}
                 value={item.value ?? item}
                 sx={{ textTransform: "capitalize" }}
@@ -127,4 +120,3 @@ onChangee?.(e.target.value)
     </div>
   );
 }
-

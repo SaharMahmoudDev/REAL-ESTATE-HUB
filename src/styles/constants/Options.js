@@ -77,7 +77,6 @@ export const PROPERTY_TYPES = [
 ];
 
 export const SORT_OPTIONS = [
-    // { value: "price-asc", label: "Price: Low to High" },
   { value: "price-desc", label: "Price: High to Low" },
   { value: "area_sqm-asc", label: "Area: Small to Large" },
   { value: "area_sqm-desc", label: "Area: Large to Small" },

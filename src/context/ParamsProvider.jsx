@@ -15,7 +15,7 @@ export const ParamsProvider = ({ children }) => {
     price_lte:null,
     city_like:null,
     _page:1,
-    _limit:2
+    _limit:12
 
   });
 

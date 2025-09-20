@@ -9,18 +9,16 @@ import { BaramsContext } from "../../context/ParamsProvider";
 
 // EXTERNAL ICONS
 import { Search } from "lucide-react";
-// import {Button} from "@mui/material";
-// CONSTANTS
+
 import {
   PRICE_RANGE_OPTIONS,
   PROPERTY_TYPES,
 } from "../../styles/constants/Options";
-import { Box } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export const SearchBrowser = ({mode}) => {
-  const { Params,setBarams } = useContext(BaramsContext);
- const navigate = useNavigate();
+export const SearchBrowser = ({ mode }) => {
+  const { Params, setBarams } = useContext(BaramsContext);
+  const navigate = useNavigate();
   const location = useLocation();
   const [draft, setDraft] = useState({
     type: null,
@@ -29,26 +27,20 @@ export const SearchBrowser = ({mode}) => {
     city_like: null,
   });
 
-    const [current, setCurrent] = useState("buy"); 
+  const [current, setCurrent] = useState("buy");
 
-
-
- const handleClick = (modee) => {
+  const handleClick = (modee) => {
     setCurrent(modee);
     navigate(`/${modee}`);
-console.log(mode)
+    console.log(mode);
   };
-useEffect(()=>{
-   if (location.pathname.startsWith("/rent")) {
-
+  useEffect(() => {
+    if (location.pathname.startsWith("/rent")) {
       setCurrent("rent");
     } else {
       setCurrent("buy");
     }
   }, [location.pathname]);
-  // setToggleRentBuyButt(Params.status??'')
-  // console.log(Params.status)
-// },[])
 
   return (
     <Section variant="!text-black">
@@ -60,31 +52,29 @@ useEffect(()=>{
         />
         <div className="mx-auto sm:mx-0 sm:ms-auto">
           <Button
-            // variant="me-3 !bg-primary text-white"
-                        variant="me-3 "
-        isActive={current !== "buy"}
-            onClick={() =>{
-              setBarams((prev) => ({ ...prev, status: "FOR_SALE" }))
-handleClick('buy')              
+            variant="me-3 "
+            isActive={current !== "buy"}
+            onClick={() => {
+              setBarams((prev) => ({ ...prev, status: "FOR_SALE" }));
+              handleClick("buy");
             }}
           >
             buy
           </Button>
 
           <Button
-            // variant=" text-[#4B5563]"
-                        variant=""
-        isActive={current !== "rent"}
-            onClick={() =>{
-              setBarams((prev) => ({ ...prev, status: "FOR_RENT" }))
-handleClick('rent')            }}
+            isActive={current !== "rent"}
+            onClick={() => {
+              setBarams((prev) => ({ ...prev, status: "FOR_RENT" }));
+              handleClick("rent");
+            }}
           >
             rent
           </Button>
         </div>
       </div>
       {/* SEARCH FORM */}
-      <div className="p-3 sm:p-6 rounded-xl bg-[#F9FAFB] mt-6 flex justify-between items-center sm:gap-2 gap-5 flex-col  sm:flex-row">
+      <div className="p-3 sm:p-6 rounded-xl bg-[#F9FAFB] mt-6 grid md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] x sm:gap-2 gap-5  ">
         <SelectSearch
           isInput={true}
           placeholder="Enter location"
@@ -117,40 +107,23 @@ handleClick('rent')            }}
           }}
         />
 
-        {/* <Box
-          className="purple-interactive w-full self-end  rounded-lg "
-          // sx={{
-          //   bgcolor: "#6D28D9",
-          //   "&:hover": {
-          //     bgcolor: "#7C3AED", 
-          //     boxShadow: 4,
-          //   },
-          //   "&:active": {
-          //     bgcolor: "#5B21B6", 
-          //     boxShadow: "inset 0px 2px 4px rgba(0,0,0,0.3)", 
-          //     transform: "scale(0.97)", 
-          //   },
-          // }}
-        > */}
-          <Button
-            type="button"
-            variant="w-full h-12.5 text-white self-end  text-base flex justify-center items-center"
-            // py-2.5 sm:py-3.25 
-            onClick={() => {
-              setBarams((prev) => ({
-                ...prev,
-                price_lte: draft.price_lte,
-                price_gte: draft.price_gte,
-                city_like: draft.city_like,
-                type: draft.type,
-                _page:1
-              }));
-            }}
-          >
-            <Search className="h-5 w-5 me-1" />
-            <span>search</span>
-          </Button>
-        {/* </Box> */}
+        <Button
+          type="button"
+          variant="w-full h-12.5 text-white self-end  text-base flex justify-center items-center"
+          onClick={() => {
+            setBarams((prev) => ({
+              ...prev,
+              price_lte: draft.price_lte,
+              price_gte: draft.price_gte,
+              city_like: draft.city_like,
+              type: draft.type,
+              _page: 1,
+            }));
+          }}
+        >
+          <Search className="h-5 w-5 me-1" />
+          <span>search</span>
+        </Button>
       </div>
     </Section>
   );

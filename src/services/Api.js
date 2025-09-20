@@ -1,18 +1,17 @@
 import axios from "axios";
-const isDev=process.env.NODE_ENV==="development"
-const API_URL = isDev?"http://localhost:5174":'https://real-estate-hub-data-api.onrender.com'
+const isDev = process.env.NODE_ENV === "development";
+export const API_URL = isDev
+  ? "http://localhost:5174"
+  : "https://real-estate-hub-data-api.onrender.com";
 
-
-// https://raw.githubusercontent.com/SaharMahmoudDev/REAL-ESTATE-HUB-DATA-API/refs/heads/master/db.json
-
- function buildPropertyParams(filters = {}) {
+function buildPropertyParams(filters = {}) {
   const p = new URLSearchParams();
 
   const setIf = (key, val) => {
     if (val !== "" && val !== null && val !== undefined)
       p.set(key, String(val));
   };
-// BUY & RENT
+  // BUY & RENT
   setIf("status", filters.status);
   // FILTERS
   setIf("bedrooms", filters.bedrooms);
@@ -31,8 +30,6 @@ const API_URL = isDev?"http://localhost:5174":'https://real-estate-hub-data-api.
   // PAGINATION
   setIf("_limit", filters._limit);
   setIf("_page", filters._page);
-
-  console.log(filters);
 
   return p;
 }

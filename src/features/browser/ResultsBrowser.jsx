@@ -10,8 +10,6 @@ import { BaramsContext } from "../../context/ParamsProvider";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress } from "@mui/material";
-// import { AnimatePresence } from "framer-motion";
-// import { motion } from "framer-motion";
 
 const ResultsBrowser = ({ view }) => {
   const topRef = useRef(null);
@@ -32,14 +30,9 @@ const ResultsBrowser = ({ view }) => {
     return <div> {error.message}</div>;
   }
 
-  const keyForAnim = `${params._page ?? 1}-${params.city_like ?? ""}-${
-    params.sort ?? ""
-  }`;
-
   return (
     <Section ref={topRef} variant="border-b-0">
       {/* HEADING */}
-      {/* <div className="overflow-hidden"> */}
       <Heading
         label="Properties for Sale"
         text={`showing ${data.totalCount} results`}
@@ -47,7 +40,6 @@ const ResultsBrowser = ({ view }) => {
       />
       {/* REAL STATE RESULTS */}
       <div
-        
         className={`mt-6 transition grid overflow-x-hidden ${
           view
             ? "grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
@@ -73,7 +65,6 @@ const ResultsBrowser = ({ view }) => {
           page={params._page}
         />
       )}
-      {/* </div> */}
     </Section>
   );
 };

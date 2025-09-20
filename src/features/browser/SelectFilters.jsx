@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import IconLabel from "../../components/ui/IconLabel";
 import RangeOption from "../../components/common/RangeOption";
 import { BaramsContext } from "../../context/ParamsProvider";
+import { useResponsiveMenuProps } from "./../../hooks/useResponsiveMenuProps";
 
 // EXTERNAL COMPONENTS
 import { Select } from "@mui/material";
@@ -20,22 +21,24 @@ const SelectFilters = ({
   props,
 }) => {
   const [value, setValue] = useState("");
-  const [valueRange, setValueRange] = useState([0, 0]);
-
   const { setBarams } = useContext(BaramsContext);
+
+  const [valueRange, setValueRange] = useState([0, 0]);
 
   const handleChange = (_, newValue) => {
     setValueRange(newValue);
   };
   const handleCommit = (_, newValue) => {
     setValueRange(newValue);
+
     setBarams((prev) => ({
       ...prev,
       area_sqm_gte: newValue[0],
       area_sqm_lte: newValue[1],
-      _page:1
+      _page: 1,
     }));
   };
+  const menuProps = useResponsiveMenuProps();
 
   return (
     <>
@@ -46,7 +49,11 @@ const SelectFilters = ({
         value={value}
         onChange={(e) => {
           isNumeric && setValue(e.target.value);
-          setBarams((prev) => ({ ...prev, [keyParams]: e.target.value ,  _page:1}));
+          setBarams((prev) => ({
+            ...prev,
+            [keyParams]: e.target.value,
+            _page: 1,
+          }));
         }}
         {...props}
         IconComponent={null}
@@ -68,7 +75,6 @@ const SelectFilters = ({
           );
         }}
         sx={{
-
           "& .MuiSelect-select": {
             padding: 0,
             paddingRight: "0 !important",
@@ -81,33 +87,37 @@ const SelectFilters = ({
           "& .MuiOutlinedInput-notchedOutline": {
             border: "none",
           },
-          "& MuiPaper-root":{
-            background:'red !important'
-          }
         }}
+        MenuProps={menuProps}
       >
         {isNumeric == true ? (
           Array.from({ length: to - from + 1 }, (_, i) =>
             i == 0 ? (
-              <MenuItem key={i} value="" className="w-screen sm:!w-auto !justify-center sm:!justify-start">
+              <MenuItem
+                key={i}
+                value=""
+                className="w-screen sm:!w-auto !justify-center sm:!justify-start"
+              >
                 all
               </MenuItem>
             ) : (
-              <MenuItem key={i} value={i + from - 1} className=" w-screen sm:!w-auto !justify-center sm:!justify-start">
+              <MenuItem
+                key={i}
+                value={i + from - 1}
+                className=" w-screen sm:!w-auto !justify-center sm:!justify-start"
+              >
                 {i + from - 1}
               </MenuItem>
             )
           )
         ) : (
           <MenuItem disableRipple>
-  
-          <RangeOption
-            onChange={handleChange}
-            handleCommit={handleCommit}
-            valueSlider={valueRange}
-          />
-</MenuItem>
-
+            <RangeOption
+              onChange={handleChange}
+              handleCommit={handleCommit}
+              valueSlider={valueRange}
+            />
+          </MenuItem>
         )}
       </Select>
     </>

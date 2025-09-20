@@ -16,9 +16,12 @@ import { Heart } from "lucide-react";
 
 const CardBrowser = ({ view, data, i }) => {
   const stylePrimum = useMemo(() => {
-    const pp=data.badge.toLowerCase();
- return pp=='new'?'bg-[#EF4444]':pp=='primum'?'bg-[#D4AF37]':'bg-primary'
-
+    const pp = data.badge.toLowerCase();
+    return pp == "new"
+      ? "bg-[#EF4444]"
+      : pp == "primum"
+      ? "bg-[#D4AF37]"
+      : "bg-primary";
   }, [data]);
 
   return (
@@ -42,7 +45,6 @@ const CardBrowser = ({ view, data, i }) => {
           >
             {data.badge}
           </span>
-          {/* <span className="block px-3 py-1 text-white text-sm font-medium leading-5 capitalize bg-[#D4AF37] rounded-4xl">premium</span> */}
 
           <button className="flex items-center  justify-center w-8 h-8 text-[#9CA3AF] rounded-full bg-white hover:bg-gray-100 focus:bg-gray-100 shadow-sm cursor-pointer hover:text-red-500 focus:text-red-500">
             <Heart className="h-4 w-4   text-inherit" />
@@ -73,7 +75,6 @@ const CardBrowser = ({ view, data, i }) => {
 
         {/* HEADING */}
         <h3 className="text-[#111827] text-base leading-6 font-medium mt-3 mb-2">
-          {/* Modern Downtown Apartment */}
           {data.title}
         </h3>
 

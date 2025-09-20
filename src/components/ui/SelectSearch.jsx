@@ -21,12 +21,10 @@ const SelectSearch = ({
   sort,
   order,
   variantGroup,
-  // sortSelect,
   onchange,
   isSort,
   setValueSearch,
   onChangee,
-  // vv,
   locationChange,
   ...props
 }) => {
@@ -53,7 +51,6 @@ const SelectSearch = ({
           ></input>
         </Box>
       )}
-{/* sm:p-3.25 p-2 */}
       {!isInput && (
         <GroupedSelect
           list={list}
@@ -64,12 +61,8 @@ const SelectSearch = ({
           sort={sort}
           order={order}
           variant={variantGroup}
-          // sortSelect={sortSelect}
-          // onchange={onchange}
           isSort={isSort}
-          // setValueSearch={setValueSearch}
           onChangee={onChangee}
-          // vv={vv}
         />
       )}
     </div>

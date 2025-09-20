@@ -5,15 +5,10 @@ import { SearchBrowser } from "../features/browser/SearchBrowser";
 import FilterBrowser from "../features/browser/FilterBrowser";
 import ResultsBrowser from "../features/browser/ResultsBrowser";
 import { BaramsContext } from "../context/ParamsProvider";
-import { useParams } from "react-router-dom";
-import { PURPOSE_TO_MODE } from "../styles/constants/Options";
 
 const BrowserPage = ({mode}) => {
   const [view, setView] = useState(true);
   const { setBarams } = useContext(BaramsContext);
-  // const { statusRoute = "buy" } = useParams();          
-
-  // const apiStatus = useMemo(() => PURPOSE_TO_MODE[statusRoute] ?? "FOR_SALE", [statusRoute]);
 
  useEffect(() => {
 
@@ -23,7 +18,6 @@ const BrowserPage = ({mode}) => {
       status: mode,       
     }));
   
-    // window.scrollTo({ top: 0, behavior: "smooth" });
   }, [ setBarams,mode]);
 
   return (
