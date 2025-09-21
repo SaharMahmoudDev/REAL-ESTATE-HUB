@@ -10,31 +10,52 @@ import { BaramsContext } from "../../context/ParamsProvider";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress } from "@mui/material";
+import Button from "../../components/ui/Button";
 
-const ResultsBrowser = ({ view }) => {
+const ResultsBrowser = ({ view, mode }) => {
   const topRef = useRef(null);
 
   const { params, setBarams } = useContext(BaramsContext);
 
-  const { isLoading, isFetching, isError, error, data } =
+  const { isLoading, isFetching, isError, error,isSuccess, refetch,data } =
     usePropertiesQuery(params);
+  const saleOrRent = mode == "FOR_SALE" ? "sale" : "rent";
 
   if (isLoading || isFetching) {
     return (
-      <div className="min-h-[600px] flex justify-center items-center">
-        <CircularProgress />
-      </div>
+      <Section>
+        <Heading
+          label={`Properties for ${saleOrRent}`}
+          variant="!font-semibold !text-xl !leading-7 "
+        />
+        <div className="min-h-[500px] flex justify-center items-center">
+          <CircularProgress />
+        </div>
+      </Section>
+      
     );
   }
   if (isError) {
-    return <div> {error.message}</div>;
+    return <Section variant="!text-black">
+        <div className="min-h-[500px] flex justify-center items-center">
+          {error.message.toLowerCase()=='network error'?
+          <span>Please check your internet connection</span>:
+          <div className="text-center">
+          <p className="text-gray-600 mb-3">Something went wrong. Please try again.</p>
+          <Button isActive={true} variant="!text-gray-700" onClick={refetch}>retry</Button>
+</div>
+          }
+        </div>
+
+
+    </Section>
   }
 
   return (
-    <Section ref={topRef} variant="border-b-0">
+    <Section ref={topRef} id="result-section" variant="border-b-0">
       {/* HEADING */}
       <Heading
-        label="Properties for Sale"
+        label={`Properties for ${saleOrRent}`}
         text={`showing ${data.totalCount} results`}
         variant="!font-semibold !text-xl !leading-7 "
       />
@@ -46,7 +67,7 @@ const ResultsBrowser = ({ view }) => {
             : "grid-cols-1 place-items-center "
         } gap-6`}
       >
-        {data.data.map((item, ind) => (
+        {isSuccess&& data.data.map((item, ind) => (
           <CardBrowser key={item.id} view={view} data={item} i={ind} />
         ))}
       </div>

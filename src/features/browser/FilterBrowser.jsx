@@ -17,6 +17,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 //  Constants
 import { SORT_OPTIONS } from "../../styles/constants/Options";
 import { useMediaQuery } from "@mui/material";
+import ScrollInTo from "../../components/common/ScrollInTo";
 
 const FilterBrowser = ({ view, setView }) => {
   const toggleButton = (toggle) => {
@@ -112,7 +113,11 @@ const FilterBrowser = ({ view, setView }) => {
                   key={label}
                   variant={`!p-1.5`}
                   isActive={!view == val}
-                  onClick={() => toggleButton(val)}
+                  onClick={() => {
+                    ScrollInTo();
+
+                    toggleButton(val);
+                  }}
                   aria-pressed={val}
                   aria-label={label}
                 >

@@ -5,7 +5,8 @@ import Button from "../../components/ui/Button";
 import IconLabel from "../../components/ui/IconLabel";
 import DetailsRooms from "./DetailsRooms";
 import { cardVariants } from "../../animations/BrowserAnimation";
-
+import Toast from "../../components/common/Toast";
+import IntegrationNotistack from "../../components/common/Toast";
 //EXTERNAL COMPONENTS
 import { Link } from "react-router-dom";
 import { delay, motion } from "framer-motion";
@@ -13,8 +14,17 @@ import { delay, motion } from "framer-motion";
 // LOCAL Icons
 import { MdLocationOn } from "react-icons/md";
 import { Heart } from "lucide-react";
+import { useSnackbar } from "notistack";
 
 const CardBrowser = ({ view, data, i }) => {
+  const { enqueueSnackbar } = useSnackbar();
+  const [liked, setLiked] = React.useState(false);
+
+  const handleClickVariant = (message, variant) => () => {
+    setLiked(perv => !perv);
+    enqueueSnackbar(message, { variant });
+
+  };
   const stylePrimum = useMemo(() => {
     const pp = data.badge.toLowerCase();
     return pp == "new"
@@ -45,9 +55,21 @@ const CardBrowser = ({ view, data, i }) => {
           >
             {data.badge}
           </span>
+          <button
+            className={`flex items-center  justify-center w-8 h-8 text-[#9CA3AF] rounded-full bg-white hover:bg-gray-100 ${
+              liked && "bg-gray-100 text-red-500"
+            } shadow-sm cursor-pointer hover:text-red-500 `}
+            onClick={
+              handleClickVariant(
+                liked
+                  ? `${data.title} removed from wishlist!`
+                  : `${data.title} added to wishlist`,
 
-          <button className="flex items-center  justify-center w-8 h-8 text-[#9CA3AF] rounded-full bg-white hover:bg-gray-100 focus:bg-gray-100 shadow-sm cursor-pointer hover:text-red-500 focus:text-red-500">
-            <Heart className="h-4 w-4   text-inherit" />
+                liked ? 'info' : "success"
+              )
+            }
+          >
+            <Heart className="h-4 w-4 text-inherit" />
           </button>
         </div>
         {/* IMAGE */}

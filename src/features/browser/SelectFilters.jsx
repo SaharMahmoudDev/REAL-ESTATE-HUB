@@ -8,6 +8,7 @@ import { useResponsiveMenuProps } from "./../../hooks/useResponsiveMenuProps";
 // EXTERNAL COMPONENTS
 import { Select } from "@mui/material";
 import { MenuItem } from "@mui/material";
+import ScrollInTo from "../../components/common/ScrollInTo";
 
 const SelectFilters = ({
   text,
@@ -37,6 +38,9 @@ const SelectFilters = ({
       area_sqm_lte: newValue[1],
       _page: 1,
     }));
+
+              ScrollInTo()
+
   };
   const menuProps = useResponsiveMenuProps();
 
@@ -54,6 +58,8 @@ const SelectFilters = ({
             [keyParams]: e.target.value,
             _page: 1,
           }));
+                        ScrollInTo()
+
         }}
         {...props}
         IconComponent={null}

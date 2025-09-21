@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import "./index.css";
 // LOCAL COMPONENTS
 import { ParamsProvider } from "./context/ParamsProvider";
@@ -14,11 +14,15 @@ import { theme } from "./styles/theme";
 import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devtools/src/index";
 
 // PAGES
-import BrowserPage from "./pages/BrowserPage";
+// import BrowserPage from "./pages/BrowserPage";
+const BrowserPage = lazy(() => import("./pages/BrowserPage"));
+
 
 // FUNCTIONS
 import { queryClient } from "./lib/queryClient";
-
+function Fallback() {
+  // return <div style={{ padding: 16, color: "#555" }}>Loading…</div>;
+}
 
 function App() {
   return (
@@ -27,6 +31,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
+            <Suspense fallback={<Fallback/>}>
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route
@@ -39,6 +44,7 @@ function App() {
                 />
               </Route>
             </Routes>
+            </Suspense>
           </ThemeProvider>
           <ReactQueryDevtools
             initialIsOpen={false}

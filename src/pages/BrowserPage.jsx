@@ -25,7 +25,7 @@ const BrowserPage = ({mode}) => {
     <Section variant="border-b-0 !p-0">
       <SearchBrowser mode={mode}/>
       <FilterBrowser view={view} setView={setView} />
-      <ResultsBrowser view={view} setView={setView} />
+      <ResultsBrowser view={view} setView={setView} mode={mode}/>
       </Section>
     </>
   );

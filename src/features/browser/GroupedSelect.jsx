@@ -8,6 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListSubheader from "@mui/material/ListSubheader";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import ScrollInTo from "../../components/common/ScrollInTo";
 
 function MyListSubheader(props) {
   return <ListSubheader {...props} />;
@@ -78,6 +79,10 @@ export default function GroupedSelect({
             setValue(e.target.value);
             onChangee?.(e.target.value);
             updateKeySortOrder(sort, order, e);
+            if(isSort){
+                            ScrollInTo()
+
+            }
           }}
           id="grouped-select"
           SelectDisplayProps={{

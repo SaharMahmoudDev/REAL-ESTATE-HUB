@@ -15,9 +15,15 @@ import {
   PROPERTY_TYPES,
 } from "../../styles/constants/Options";
 import { useLocation, useNavigate } from "react-router-dom";
+import ScrollInTo from "../../components/common/ScrollInTo";
+import { usePropertiesQuery } from "../../hooks/usePropertiesQuery";
 
 export const SearchBrowser = ({ mode }) => {
-  const { Params, setBarams } = useContext(BaramsContext);
+  const { params, setBarams } = useContext(BaramsContext);
+
+  const { isLoading, isFetching, isError, error, data } =
+      usePropertiesQuery(params);
+
   const navigate = useNavigate();
   const location = useLocation();
   const [draft, setDraft] = useState({
@@ -26,6 +32,7 @@ export const SearchBrowser = ({ mode }) => {
     price_lte: null,
     city_like: null,
   });
+  const [valueInInput, setValueInInput] = useState(false);
 
   const [current, setCurrent] = useState("buy");
 
@@ -57,6 +64,7 @@ export const SearchBrowser = ({ mode }) => {
             onClick={() => {
               setBarams((prev) => ({ ...prev, status: "FOR_SALE" }));
               handleClick("buy");
+              ScrollInTo()
             }}
           >
             buy
@@ -67,6 +75,8 @@ export const SearchBrowser = ({ mode }) => {
             onClick={() => {
               setBarams((prev) => ({ ...prev, status: "FOR_RENT" }));
               handleClick("rent");
+                            ScrollInTo()
+
             }}
           >
             rent
@@ -82,6 +92,7 @@ export const SearchBrowser = ({ mode }) => {
           variant="placeholder:text-[#ADAEBC] text-lg leading-6"
           locationChange={(e) => {
             setDraft((d) => ({ ...d, city_like: e.target.value }));
+
           }}
         />
         <SelectSearch
@@ -90,7 +101,11 @@ export const SearchBrowser = ({ mode }) => {
           label="property type"
           defaultLabel="All Types"
           isSort={false}
-          onChangee={(v) => setDraft((d) => ({ ...d, type: v?.toUpperCase() }))}
+          onChangee={(v) => {setDraft((d) => ({ ...d, type: v?.toUpperCase() }))
+        //   if(draft.type!=null){
+        // setValueInInput(true)
+        //   }
+        }}
         />
 
         <SelectSearch
@@ -119,6 +134,11 @@ export const SearchBrowser = ({ mode }) => {
               type: draft.type,
               _page: 1,
             }));
+            console.log(params,draft)
+            if(draft.type||draft.city_like||draft.price_gte||draft.price_lte&&valueInInput
+              ){
+            ScrollInTo()
+            }
           }}
         >
           <Search className="h-5 w-5 me-1" />
