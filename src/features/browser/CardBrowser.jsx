@@ -42,7 +42,7 @@ const CardBrowser = ({ view, data, i }) => {
       viewport={{ once: false, amount: 0.3 }}
       exit="exit"
       layout="position"
-      className={`max-w-2xl bg-white border border-[#E5E7EB] rounded-xl overflow-hidden shadow-sm ${
+      className={`max-w-2xl bg-white border border-[#E5E7EB] rounded-xl overflow-y-hidden shadow-sm ${
         !view && "md:w-2xl"
       }`}
     >
