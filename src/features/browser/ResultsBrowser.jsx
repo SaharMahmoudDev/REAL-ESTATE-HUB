@@ -9,19 +9,43 @@ import { usePropertiesQuery } from "../../hooks/usePropertiesQuery";
 import { BaramsContext } from "../../context/ParamsProvider";
 
 // EXTERNAL COMPONENTS
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, useMediaQuery } from "@mui/material";
 import Button from "../../components/ui/Button";
+import { useLoadMoreOnIntersect } from "../../hooks/useLoadMore";
+// import { useLoadMore, useLoadMoreOnIntersect } from "../../hooks/useLoadMore";
 
 const ResultsBrowser = ({ view, mode }) => {
   const topRef = useRef(null);
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   const { params, setBarams } = useContext(BaramsContext);
 
-  const { isLoading, isFetching, isError, error,isSuccess, refetch,data } =
-    usePropertiesQuery(params);
+  const {
+    isLoading,
+    isFetching,
+    isError,
+    error,
+    isSuccess,
+    refetch,
+    data,
+    hasNextPage,
+    hasMore,
+    loadMore,
+    isLoadingMore ,
+    items
+  } = usePropertiesQuery(params);
+  console.log(isSuccess && hasNextPage, loadMore, hasMore);
+  console.log(hasMore);
+
+  const gg = useLoadMoreOnIntersect(loadMore);
+
+  const sentinelRef = useLoadMoreOnIntersect(() => {
+    if (hasMore) loadMore?.();
+  });
+  console.log(gg);
   const saleOrRent = mode == "FOR_SALE" ? "sale" : "rent";
 
-  if (isLoading || isFetching) {
+  if (isLoading || (isFetching&& !isSuccess) ) {
     return (
       <Section>
         <Heading
@@ -32,23 +56,31 @@ const ResultsBrowser = ({ view, mode }) => {
           <CircularProgress />
         </div>
       </Section>
-      
     );
   }
   if (isError) {
-    return <Section variant="!text-black">
+    return (
+      <Section variant="!text-black">
         <div className="min-h-[500px] flex justify-center items-center">
-          {error.message.toLowerCase()=='network error'?
-          <span>Please check your internet connection</span>:
-          <div className="text-center">
-          <p className="text-gray-600 mb-3">Something went wrong. Please try again.</p>
-          <Button isActive={true} variant="!text-gray-700" onClick={refetch}>retry</Button>
-</div>
-          }
+          {error.message.toLowerCase() == "network error" ? (
+            <span>Please check your internet connection</span>
+          ) : (
+            <div className="text-center">
+              <p className="text-gray-600 mb-3">
+                Something went wrong. Please try again.
+              </p>
+              <Button
+                isActive={true}
+                variant="!text-gray-700"
+                onClick={refetch}
+              >
+                retry
+              </Button>
+            </div>
+          )}
         </div>
-
-
-    </Section>
+      </Section>
+    );
   }
 
   return (
@@ -56,7 +88,7 @@ const ResultsBrowser = ({ view, mode }) => {
       {/* HEADING */}
       <Heading
         label={`Properties for ${saleOrRent}`}
-        text={`showing ${data.totalCount} results`}
+        // text={`showing ${data.totalCount} results`}
         variant="!font-semibold !text-xl !leading-7 "
       />
       {/* REAL STATE RESULTS */}
@@ -67,13 +99,27 @@ const ResultsBrowser = ({ view, mode }) => {
             : "grid-cols-1 place-items-center "
         } gap-6`}
       >
-        {isSuccess&& data.data.map((item, ind) => (
-          <CardBrowser key={item.id} view={view} data={item} i={ind} />
-        ))}
+        {!isMobile &&
+          isSuccess &&
+          items.map((item, ind) => (
+            <CardBrowser key={item.id} view={view} data={item} i={ind} />
+          ))}
+        {isMobile &&
+          isSuccess &&
+          data.items.map((item, ind) => (
+            <CardBrowser key={item.id} view={view} data={item} i={ind} />
+          ))}
+        {isMobile && hasMore && (
+          <div className="w-full h-64x flex items-center justify-center"
+    style={{overflowAnchor: "none"  }} >
+          <div ref={sentinelRef}  />
+          {isLoadingMore&&<CircularProgress/>}
+          </div>
+        )}
       </div>
 
       {/* PAGINATION */}
-      {data.totalCount > 0 && (
+      {!isMobile && data.totalCount > 0 && (
         <PaginationSection
           count={data.totalPages}
           onChange={(nextPage) => {
