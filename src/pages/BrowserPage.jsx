@@ -8,17 +8,17 @@ import { BaramsContext } from "../context/ParamsProvider";
 
 const BrowserPage = ({mode}) => {
   const [view, setView] = useState(true);
-  const { setBarams } = useContext(BaramsContext);
+  const { setParams } = useContext(BaramsContext);
 
  useEffect(() => {
 
-    setBarams(prev => ({
+    setParams(prev => ({
       ...prev,
       _page: 1,           
       status: mode,       
     }));
   
-  }, [ setBarams,mode]);
+  }, [ setParams,mode]);
 
   return (
     <>

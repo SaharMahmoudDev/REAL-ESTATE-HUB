@@ -7,18 +7,17 @@ import { Heading } from "../../components/ui/Heading";
 import CardBrowser from "./CardBrowser";
 import { usePropertiesQuery } from "../../hooks/usePropertiesQuery";
 import { BaramsContext } from "../../context/ParamsProvider";
+import { useLoadMoreOnIntersect } from "../../hooks/useLoadMore";
+import Button from "../../components/ui/Button";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress, useMediaQuery } from "@mui/material";
-import Button from "../../components/ui/Button";
-import { useLoadMoreOnIntersect } from "../../hooks/useLoadMore";
-// import { useLoadMore, useLoadMoreOnIntersect } from "../../hooks/useLoadMore";
 
-const ResultsBrowser = ({ view, mode }) => {
+const ResultsBrowser = React.memo(({ view, mode }) => {
   const topRef = useRef(null);
   const isMobile = useMediaQuery("(max-width:768px)");
 
-  const { params, setBarams } = useContext(BaramsContext);
+  const { params, setParams } = useContext(BaramsContext);
 
   const {
     isLoading,
@@ -28,22 +27,17 @@ const ResultsBrowser = ({ view, mode }) => {
     isSuccess,
     refetch,
     data,
-    hasNextPage,
     hasMore,
     loadMore,
     isLoadingMore,
     items,
   } = usePropertiesQuery(params);
-  console.log(isSuccess && hasNextPage, loadMore, hasMore);
-  console.log(hasMore);
 
-  const gg = useLoadMoreOnIntersect(loadMore);
 
   const sentinelRef = useLoadMoreOnIntersect(() => {
     if (hasMore) loadMore?.();
   });
-  console.log(gg);
-  const saleOrRent = mode == "FOR_SALE" ? "sale" : "rent";
+  const saleOrRent = mode === "FOR_SALE" ? "sale" : "rent";
 
   if (isLoading || (isFetching && !isSuccess)) {
     return (
@@ -62,7 +56,7 @@ const ResultsBrowser = ({ view, mode }) => {
     return (
       <Section variant="!text-black ">
         <div className="min-h-[20px] flex justify-center items-center">
-          {error.message.toLowerCase() == "network error" ? (
+          {error?.message?.toLowerCase?.().includes("network error") ? (
             <span>Please check your internet connection</span>
           ) : (
             <div className="text-center">
@@ -92,7 +86,7 @@ const ResultsBrowser = ({ view, mode }) => {
       {/* HEADING */}
       <Heading
         label={`Properties for ${saleOrRent}`}
-        text={`showing ${data.totalCount} results`}
+        text={`showing ${data?.totalCount??0} results`}
         variant="!font-semibold !text-xl !leading-7 "
       />
       {/* REAL STATE RESULTS */}
@@ -125,11 +119,11 @@ const ResultsBrowser = ({ view, mode }) => {
       </div>
 
       {/* PAGINATION */}
-      {!isMobile && data.totalCount > 0 && (
+      {!isMobile && data?.totalCount > 0 && (
         <PaginationSection
-          count={data.totalPages}
+          count={data?.totalPages??1}
           onChange={(nextPage) => {
-            setBarams((prev) => ({ ...prev, _page: nextPage }));
+            setParams((prev) => ({ ...prev, _page: nextPage }));
             topRef.current?.scrollIntoView({
               behavior: "smooth",
               block: "start",
@@ -140,6 +134,6 @@ const ResultsBrowser = ({ view, mode }) => {
       )}
     </Section>
   );
-};
+})
 
 export default ResultsBrowser;

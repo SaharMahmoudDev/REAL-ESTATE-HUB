@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
-const ScrollInTo = () => {
+const ScrollInTo =() => {
     const section = document.getElementById("result-section");
 
     section?.scrollIntoView({

@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 
 export const BaramsContext = createContext();
 export const ParamsProvider = ({ children }) => {
-  const [params, setBarams] = useState({
+  const [params, setParams] = useState({
     status: null,
     bedrooms: null,
     bathrooms: null,
@@ -18,9 +18,10 @@ export const ParamsProvider = ({ children }) => {
     _limit:12
 
   });
+const value = useMemo(() => ({ params, setParams }), [params]);
 
   return (
-    <BaramsContext.Provider value={{ params, setBarams }}>
+    <BaramsContext.Provider value={value}>
       {children}
     </BaramsContext.Provider>
   );

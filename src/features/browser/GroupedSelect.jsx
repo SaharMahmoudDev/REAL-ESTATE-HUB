@@ -15,7 +15,7 @@ function MyListSubheader(props) {
 }
 MyListSubheader.muiSkipListHighlight = true;
 
-export default function GroupedSelect({
+ const GroupedSelect=React.memo(({
   list = [],
   isGroup,
   selectProps = {},
@@ -26,15 +26,15 @@ export default function GroupedSelect({
   isSort,
   onChangee,
   variant,
-}) {
+})=> {
   const menuProps = useResponsiveMenuProps();
 
-  const { setBarams } = React.useContext(BaramsContext);
+  const { setParams } = React.useContext(BaramsContext);
 
   const updateKeySortOrder = (sort, order, e) => {
     if (isSort == true) {
       setValue(e.target.value);
-      setBarams((prev) => ({
+      setParams((prev) => ({
         ...prev,
         [sort]: e.target.value.split("-")[0],
         [order]: e.target.value.split("-")[1].trim().toLowerCase(),
@@ -124,4 +124,6 @@ export default function GroupedSelect({
       </FormControl>
     </div>
   );
-}
+})
+
+export default GroupedSelect

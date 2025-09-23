@@ -12,7 +12,7 @@ export function useLoadMoreOnIntersect(onIntersect) {
       (entries) => {
         if (entries[0].isIntersecting) onIntersect();
       },
-      { rootMargin: "100px" } 
+      { rootMargin: "80px" } 
     );
 
     obs.observe(el);

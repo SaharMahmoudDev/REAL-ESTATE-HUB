@@ -72,13 +72,10 @@ initialPageParam: 1,
 
  getNextPageParam: (lastPage, allPages) => {
       const totalCount = Number(lastPage?.headers?.["x-total-count"] ?? 0);
-      console.log(totalCount)
 
       const totalPages = Math.max(1, Math.ceil(totalCount / limitItems));
-      console.log(totalPages)
 
       const next = allPages.length + 1;
-      console.log(next)
       return next <= totalPages ? next : undefined;
     },
  select: (data) => {
@@ -87,8 +84,6 @@ initialPageParam: 1,
       const lastHeaders = pages.at(-1)?.headers;
       const totalCount = Number(lastHeaders?.["x-total-count"] ?? 0);
       const totalPages = Math.max(1, Math.ceil(totalCount / limitItems));
-      // return { items, limit, totalCount, totalPages, headers: lastHeaders };
-      console.log({items})
             return { items, totalPages, limitItems, totalCount, headers: lastHeaders};
 
     },

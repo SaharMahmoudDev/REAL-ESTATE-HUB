@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 // LOCAL COMPONENTS
 import IconLabel from "../../components/ui/IconLabel";
 import RangeOption from "../../components/common/RangeOption";
@@ -22,17 +22,17 @@ const SelectFilters = ({
   props,
 }) => {
   const [value, setValue] = useState("");
-  const { setBarams } = useContext(BaramsContext);
+  const { setParams } = useContext(BaramsContext);
 
   const [valueRange, setValueRange] = useState([0, 0]);
 
-  const handleChange = (_, newValue) => {
+  const handleChange = useCallback((_, newValue) => {
     setValueRange(newValue);
-  };
-  const handleCommit = (_, newValue) => {
+  },[setValueRange])
+  const handleCommit = useCallback((_, newValue) => {
     setValueRange(newValue);
 
-    setBarams((prev) => ({
+    setParams((prev) => ({
       ...prev,
       area_sqm_gte: newValue[0],
       area_sqm_lte: newValue[1],
@@ -41,7 +41,7 @@ const SelectFilters = ({
 
               ScrollInTo()
 
-  };
+  },[setParams])
   const menuProps = useResponsiveMenuProps();
 
   return (
@@ -53,7 +53,7 @@ const SelectFilters = ({
         value={value}
         onChange={(e) => {
           isNumeric && setValue(e.target.value);
-          setBarams((prev) => ({
+          setParams((prev) => ({
             ...prev,
             [keyParams]: e.target.value,
             _page: 1,

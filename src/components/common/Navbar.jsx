@@ -29,6 +29,8 @@ const Navbar = () => {
 
   // const navItems = ['Buy', 'Rent', 'Sell', 'Regions'];
 
+  
+
   return (
     <>
       <motion.header

@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHome, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaBuilding } from 'react-icons/fa';
 import ScrollTopButton from '../ui/ScrollTopButton';
-
+import LiNavbar from './../ui/LiNavbar'
+import LiFooter from '../ui/LiFooter';
 const Footer = () => {
   const services = [
     "Buy Property",
@@ -204,7 +205,15 @@ const Footer = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              {services.map((service, index) => (
+
+<LiFooter item='buy property' href='/buy' variants={listItemVariants}/>
+<LiFooter item='rent property' href='/rent' variants={listItemVariants}/>
+<LiFooter item='sell property' href='#' variants={listItemVariants} />
+<LiFooter item='Property Management' href='#' variants={listItemVariants}/>
+
+
+
+              {/* {services.map((service, index) => (
                 <motion.li key={index} variants={listItemVariants}>
                   <motion.a 
                     href="#" 
@@ -226,7 +235,7 @@ const Footer = () => {
                     </span>
                   </motion.a>
                 </motion.li>
-              ))}
+              ))} */}
             </motion.ul>
           </motion.div>
 

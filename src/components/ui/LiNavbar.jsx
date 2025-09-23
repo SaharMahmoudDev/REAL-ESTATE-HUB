@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 const LiNavbar = ({item,href}) => {
   return (
-  <motion.li
+  <motion.li 
                       key={item}
                       variants={{
                         hidden: { y: -20, opacity: 0 },

@@ -16,7 +16,7 @@ import { MdLocationOn } from "react-icons/md";
 import { Heart } from "lucide-react";
 import { useSnackbar } from "notistack";
 
-const CardBrowser = ({ view, data, i }) => {
+const CardBrowser = React.memo(({ view, data, i }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [liked, setLiked] = React.useState(false);
 
@@ -123,6 +123,6 @@ const CardBrowser = ({ view, data, i }) => {
       </div>
     </motion.div>
   );
-};
+})
 
 export default CardBrowser;

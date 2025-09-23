@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 // Local Components
 import Section from "../../components/ui/Section";
@@ -20,9 +20,10 @@ import { useMediaQuery } from "@mui/material";
 import ScrollInTo from "../../components/common/ScrollInTo";
 
 const FilterBrowser = ({ view, setView }) => {
-  const toggleButton = (toggle) => {
+  const hundelToggleButton = useCallback((toggle) => {
     setView(toggle);
-  };
+    ScrollInTo();
+  },[setView]);
   const isSmall = useMediaQuery("(max-width:600px)");
 
   const flexBetweenCenter = ["flex", " items-center", "flex-wrap"].join(" ");
@@ -114,9 +115,7 @@ const FilterBrowser = ({ view, setView }) => {
                   variant={`!p-1.5`}
                   isActive={!view == val}
                   onClick={() => {
-                    ScrollInTo();
-
-                    toggleButton(val);
+                    hundelToggleButton(val);
                   }}
                   aria-pressed={val}
                   aria-label={label}
