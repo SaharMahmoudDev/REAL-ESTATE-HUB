@@ -15,7 +15,7 @@ export const ParamsProvider = ({ children }) => {
     price_lte:null,
     city_like:null,
     _page:1,
-    _limit:12
+    _limit:6
 
   });
 const value = useMemo(() => ({ params, setParams }), [params]);

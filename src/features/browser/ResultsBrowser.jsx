@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 
 //  LOCAL COMPONENTS
 import Section from "../../components/ui/Section";
@@ -12,6 +12,8 @@ import Button from "../../components/ui/Button";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress, useMediaQuery } from "@mui/material";
+import ScrollInTo from "../../components/common/ScrollInTo";
+import { flushSync } from "react-dom";
 
 const ResultsBrowser = React.memo(({ view, mode }) => {
   const topRef = useRef(null);
@@ -33,11 +35,27 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
     items,
   } = usePropertiesQuery(params);
 
-
   const sentinelRef = useLoadMoreOnIntersect(() => {
     if (hasMore) loadMore?.();
   });
   const saleOrRent = mode === "FOR_SALE" ? "sale" : "rent";
+
+  // useEffect(() => {
+  //     if (!isFetching && isSuccess) {
+  //       topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     }
+  //   }, [params._page, isFetching, isSuccess]);
+
+  const handleChange = useCallback(
+    (nextPage) => {
+        if (nextPage === params._page) return;
+      flushSync(() => {
+        setParams((prev) => ({ ...prev, _page: nextPage }));
+      });
+      ScrollInTo();
+    },
+    [params._page,setParams]
+  );
 
   if (isLoading || (isFetching && !isSuccess)) {
     return (
@@ -78,15 +96,11 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
   }
 
   return (
-    <Section
-      ref={topRef}
-      id="result-section"
-      variant="border-b-0"
-    >
+    <Section ref={topRef} id="result-section" variant="border-b-0 scroll-mt-5 sm:scroll-mt-0 ">
       {/* HEADING */}
       <Heading
         label={`Properties for ${saleOrRent}`}
-        text={`showing ${data?.totalCount??0} results`}
+        text={`showing ${data?.totalCount ?? 0} results`}
         variant="!font-semibold !text-xl !leading-7 "
       />
       {/* REAL STATE RESULTS */}
@@ -121,19 +135,15 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
       {/* PAGINATION */}
       {!isMobile && data?.totalCount > 0 && (
         <PaginationSection
-          count={data?.totalPages??1}
+          count={data?.totalPages ?? 1}
           onChange={(nextPage) => {
-            setParams((prev) => ({ ...prev, _page: nextPage }));
-            topRef.current?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+            handleChange(nextPage);
           }}
           page={params._page}
         />
       )}
     </Section>
   );
-})
+});
 
 export default ResultsBrowser;
