@@ -1,7 +1,6 @@
-// hooks/useLoadMore.ts
 import { useEffect, useRef } from "react";
 
-export function useLoadMoreOnIntersect(onIntersect) {
+ function useLoadMoreOnIntersect(onIntersect) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -24,3 +23,4 @@ export function useLoadMoreOnIntersect(onIntersect) {
 
   return ref;
 }
+export default useLoadMoreOnIntersect

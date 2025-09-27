@@ -14,9 +14,8 @@ import { theme } from "./styles/theme";
 import { ReactQueryDevtools } from "./../node_modules/@tanstack/react-query-devtools/src/index";
 
 // PAGES
-// import BrowserPage from "./pages/BrowserPage";
-const BrowserPage = lazy(() => import("./pages/BrowserPage"));
 
+const BrowserPage = lazy(() => import("./pages/BrowserPage"));
 
 // FUNCTIONS
 import { queryClient } from "./lib/queryClient";

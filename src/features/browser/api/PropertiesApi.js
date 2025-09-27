@@ -34,8 +34,9 @@ function buildPropertyParams(filters = {}) {
   return p;
 }
 
-export async function fetchProperties({ signal, filters = {} }) {
+ async function fetchProperties({ signal, filters = {} }) {
   const params = buildPropertyParams(filters);
   const res = await axios.get(`${API_URL}/properties`, { signal, params });
   return res;
 }
+export default fetchProperties

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Heading = ({ label, text, variant = "" }) => {
+const Heading = ({ label, text, variant = "" }) => {
   return (
     <div className="capitalize ">
       <h4
@@ -12,3 +12,4 @@ export const Heading = ({ label, text, variant = "" }) => {
     </div>
   );
 };
+export default Heading

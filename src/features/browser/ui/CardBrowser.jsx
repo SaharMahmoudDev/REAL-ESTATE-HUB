@@ -1,19 +1,19 @@
 import React, { useMemo } from "react";
 
 //  LOCAL COMPONENTS
-import Button from "../../components/ui/Button";
-import IconLabel from "../../components/ui/IconLabel";
-import DetailsRooms from "./DetailsRooms";
-import { cardVariants } from "../../animations/BrowserAnimation";
-import Toast from "../../components/common/Toast";
-import IntegrationNotistack from "../../components/common/Toast";
+import {Button} from "@/components";
+import {IconLabel,DetailsRooms} from "@/features/browser";
+import { cardVariants } from "../../../animations/BrowserAnimation";
+
 //EXTERNAL COMPONENTS
 import { Link } from "react-router-dom";
 import { delay, motion } from "framer-motion";
 
-// LOCAL Icons
+// EXTERNAL Icons
 import { MdLocationOn } from "react-icons/md";
 import { Heart } from "lucide-react";
+
+// EXTERNAL HOOKS
 import { useSnackbar } from "notistack";
 
 const CardBrowser = React.memo(({ view, data, i }) => {
@@ -75,7 +75,7 @@ const CardBrowser = React.memo(({ view, data, i }) => {
         {/* IMAGE */}
         <img
           src={data.images[0]}
-          alt="title"
+          alt={data.title}
           className=" w-full object-cover rounded-t-xl rounded-b-none"
           loading="lazy"
         />

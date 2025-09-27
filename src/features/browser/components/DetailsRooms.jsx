@@ -1,10 +1,10 @@
 import React from 'react'
 
 // LOCAL COMPONENTS
-import IconLabel from '../../components/ui/IconLabel';
+import {IconLabel} from "@/features/browser";
 
 // LOCAL ICONS
-import   Icon from '../../assets/photos/Vector (1).svg?react'
+import   Icon from '../../../assets/photos/Vector (1).svg?react'
 
 // EXTERNAL ICONS
 import {FaExpandArrowsAlt } from "react-icons/fa";

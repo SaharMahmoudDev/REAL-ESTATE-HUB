@@ -1,8 +1,8 @@
 import React from "react";
 
 // LOCAL COMPONENTS
-import Section from "../../components/ui/Section";
-import { layoutVariants } from "./../../animations/BrowserAnimation";
+import {Section} from "@/components";
+import { layoutVariants } from "../../../animations/BrowserAnimation";
 
 //  EXTARNAL COMPONENTS
 import Pagination from "@mui/material/Pagination";

@@ -2,21 +2,18 @@ import React, { useCallback, useContext, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // LOCAL COMPONENTS
-import Section from "../../components/ui/Section";
-import { Heading } from "../../components/ui/Heading";
-import Button from "../../components/ui/Button";
-import SelectSearch from "../../components/ui/SelectSearch";
-import { BaramsContext } from "../../context/ParamsProvider";
-import ScrollInTo from "../../components/common/ScrollInTo";
+import { Section, Heading, Button, ScrollInTo } from "@/components";
+import { SelectSearch,useParams } from "@/features/browser";
+import { BaramsContext } from "../../../context/ParamsProvider";
 import {
   PRICE_RANGE_OPTIONS,
   PROPERTY_TYPES,
-} from "../../styles/constants/Options";
+} from "../../../constants/Options";
 
 // EXTERNAL ICONS
 import { Search } from "lucide-react";
 
-export const SearchBrowser = React.memo(() => {
+const SearchBrowser = React.memo(() => {
   const { setParams } = useContext(BaramsContext);
 
   const navigate = useNavigate();
@@ -29,20 +26,10 @@ export const SearchBrowser = React.memo(() => {
   });
   const prevDraft = useRef(draft);
   const current = location.pathname.startsWith("/rent") ? "rent" : "buy";
-
-  // const [current, setCurrent] = useState("buy");
-
+  const { handleKeyParams } = useParams();
   const handleModeClick = (mode) => {
-    // setCurrent(modee);
     navigate(`/${mode}`);
   };
-  // useEffect(() => {
-  //   if (location.pathname.startsWith("/rent")) {
-  //     setCurrent("rent");
-  //   } else {
-  //     setCurrent("buy");
-  //   }
-  // }, [location.pathname]);
 
   const onLocationChange = useCallback((e) => {
     setDraft((d) => ({ ...d, city_like: e.target.value }));
@@ -63,7 +50,7 @@ export const SearchBrowser = React.memo(() => {
 
   const checkDraftChange = () => {
     if (prevDraft?.current !== draft) {
-      ScrollInTo();
+      ScrollInTo("result-section");
     }
     prevDraft.current = draft;
   };
@@ -71,14 +58,13 @@ export const SearchBrowser = React.memo(() => {
   const handleSearch = (e) => {
     e?.preventDefault?.();
 
-    setParams((prev) => ({
-      ...prev,
+    handleKeyParams({
       price_lte: draft.price_lte,
       price_gte: draft.price_gte,
       city_like: draft.city_like,
       type: draft.type,
       _page: 1,
-    }));
+    });
 
     checkDraftChange();
   };
@@ -98,7 +84,7 @@ export const SearchBrowser = React.memo(() => {
             onClick={() => {
               setParams((prev) => ({ ...prev, status: "FOR_SALE" }));
               handleModeClick("buy");
-              ScrollInTo();
+              ScrollInTo("result-section");
             }}
           >
             buy
@@ -109,7 +95,7 @@ export const SearchBrowser = React.memo(() => {
             onClick={() => {
               setParams((prev) => ({ ...prev, status: "FOR_RENT" }));
               handleModeClick("rent");
-              ScrollInTo();
+              ScrollInTo("result-section");
             }}
           >
             rent
@@ -126,11 +112,6 @@ export const SearchBrowser = React.memo(() => {
           placeholder="Enter location"
           label="location"
           variant="placeholder:text-[#ADAEBC] text-lg leading-6"
-          // locationChange={(e) => {
-          //   setDraft((d) => ({ ...d, city_like: e.target.value }));
-
-          // }}
-
           locationChange={(e) => {
             onLocationChange(e);
           }}
@@ -141,9 +122,7 @@ export const SearchBrowser = React.memo(() => {
           label="property type"
           defaultLabel="All Types"
           isSort={false}
-          //   onChangee={(v) => {setDraft((d) => ({ ...d, type: v?.toUpperCase() }))
-          // }}
-          onChangee={(v) => {
+          updateDraft={(v) => {
             onTypeChange(v);
           }}
         />
@@ -153,15 +132,7 @@ export const SearchBrowser = React.memo(() => {
           label="price range"
           defaultLabel="Any Price"
           isSort={false}
-          // onChangee={(v) => {
-          //   const min = v.min;
-          //   const max = v.max;
-          //   max?.toString().trim() === "M10+"
-          //     ? setDraft((d) => ({ ...d, price_lte: min, price_gte: null }))
-          //     : setDraft((d) => ({ ...d, price_lte: min, price_gte: max }));
-          // }}
-
-          onChangee={(v) => {
+          updateDraft={(v) => {
             onPriceChange(v);
           }}
         />
@@ -169,19 +140,6 @@ export const SearchBrowser = React.memo(() => {
         <Button
           type="submit"
           variant="w-full h-12.5 text-white self-end  text-base flex justify-center items-center"
-          onClick={() => {
-            // setBarams((prev) => ({
-            //   ...prev,
-            //   price_lte: draft.price_lte,
-            //   price_gte: draft.price_gte,
-            //   city_like: draft.city_like,
-            //   type: draft.type,
-            //   _page: 1,
-            // }));
-            // if(draft.type!==null||draft.city_like||draft.price_gte||draft.price_lte){
-            // checkDraftChange();
-            // }
-          }}
         >
           <Search className="h-5 w-5 me-1" />
           <span>search</span>
@@ -189,4 +147,5 @@ export const SearchBrowser = React.memo(() => {
       </form>
     </Section>
   );
-})
+});
+export default SearchBrowser;

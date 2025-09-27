@@ -1,14 +1,11 @@
 import React from "react";
 // LOCAL COMPONENTS
-import Navbar from "./../components/common/Navbar";
+import {Footer,Navbar,ScrollTopButton} from'@/components'
 import { layoutVariants } from "../animations/BrowserAnimation";
-import Footer from "./../components/common/Footer";
-import ScrollTopButton from "../components/ui/ScrollTopButton";
 
 // EXTARNAL COMPONENTS
 import { Outlet } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+import { AnimatePresence,motion } from "framer-motion";
 
 const Layout = () => {
   return (

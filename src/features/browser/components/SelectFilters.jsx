@@ -1,14 +1,16 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useState } from "react";
 // LOCAL COMPONENTS
-import IconLabel from "../../components/ui/IconLabel";
-import RangeOption from "../../components/common/RangeOption";
-import { BaramsContext } from "../../context/ParamsProvider";
-import { useResponsiveMenuProps } from "./../../hooks/useResponsiveMenuProps";
+import { ScrollInTo } from "@/components";
+import {
+  RangeOption,
+  IconLabel,
+  useResponsiveMenuProps,
+  useParams,
+} from "@/features/browser";
 
 // EXTERNAL COMPONENTS
 import { Select } from "@mui/material";
 import { MenuItem } from "@mui/material";
-import ScrollInTo from "../../components/common/ScrollInTo";
 
 const SelectFilters = ({
   text,
@@ -22,26 +24,29 @@ const SelectFilters = ({
   props,
 }) => {
   const [value, setValue] = useState("");
-  const { setParams } = useContext(BaramsContext);
 
   const [valueRange, setValueRange] = useState([0, 0]);
+  const { handleKeyParams } = useParams();
 
-  const handleChange = useCallback((_, newValue) => {
-    setValueRange(newValue);
-  },[setValueRange])
-  const handleCommit = useCallback((_, newValue) => {
-    setValueRange(newValue);
+  const handleChange = useCallback(
+    (_, newValue) => {
+      setValueRange(newValue);
+    },
+    [setValueRange]
+  );
+  const handleCommit = useCallback(
+    (_, newValue) => {
+      setValueRange(newValue);
+      handleKeyParams({
+        area_sqm_gte: newValue[0],
+        area_sqm_lte: newValue[1],
+        _page: 1,
+      });
 
-    setParams((prev) => ({
-      ...prev,
-      area_sqm_gte: newValue[0],
-      area_sqm_lte: newValue[1],
-      _page: 1,
-    }));
-
-              ScrollInTo()
-
-  },[setParams])
+      ScrollInTo("result-section");
+    },
+    [handleKeyParams]
+  );
   const menuProps = useResponsiveMenuProps();
 
   return (
@@ -53,13 +58,8 @@ const SelectFilters = ({
         value={value}
         onChange={(e) => {
           isNumeric && setValue(e.target.value);
-          setParams((prev) => ({
-            ...prev,
-            [keyParams]: e.target.value,
-            _page: 1,
-          }));
-                        ScrollInTo()
-
+          handleKeyParams({ [keyParams]: e.target.value, _page: 1 });
+          ScrollInTo("result-section");
         }}
         {...props}
         IconComponent={null}

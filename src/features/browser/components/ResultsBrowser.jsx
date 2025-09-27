@@ -1,25 +1,27 @@
-import React, { useCallback, useContext, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useRef } from "react";
 
 //  LOCAL COMPONENTS
-import Section from "../../components/ui/Section";
-import PaginationSection from "./Pagination";
-import { Heading } from "../../components/ui/Heading";
-import CardBrowser from "./CardBrowser";
-import { usePropertiesQuery } from "../../hooks/usePropertiesQuery";
-import { BaramsContext } from "../../context/ParamsProvider";
-import { useLoadMoreOnIntersect } from "../../hooks/useLoadMore";
-import Button from "../../components/ui/Button";
+import { Section, Heading, ScrollInTo, Button } from "@/components";
+import {
+  CardBrowser,
+  PaginationSection,
+  useLoadMoreOnIntersect,
+  usePropertiesQuery,
+  useParams
+} from "@/features/browser";
+import { BaramsContext } from "../../../context/ParamsProvider";
 
 // EXTERNAL COMPONENTS
 import { CircularProgress, useMediaQuery } from "@mui/material";
-import ScrollInTo from "../../components/common/ScrollInTo";
 import { flushSync } from "react-dom";
 
 const ResultsBrowser = React.memo(({ view, mode }) => {
   const topRef = useRef(null);
   const isMobile = useMediaQuery("(max-width:768px)");
 
-  const { params, setParams } = useContext(BaramsContext);
+  const { params } = useContext(BaramsContext);
+    const { handleKeyParams } = useParams();
+
 
   const {
     isLoading,
@@ -40,21 +42,16 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
   });
   const saleOrRent = mode === "FOR_SALE" ? "sale" : "rent";
 
-  // useEffect(() => {
-  //     if (!isFetching && isSuccess) {
-  //       topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  //     }
-  //   }, [params._page, isFetching, isSuccess]);
-
   const handleChange = useCallback(
     (nextPage) => {
-        if (nextPage === params._page) return;
+      if (nextPage === params._page) return;
       flushSync(() => {
-        setParams((prev) => ({ ...prev, _page: nextPage }));
+        // setParams((prev) => ({ ...prev, _page: nextPage }));
+        handleKeyParams({ _page: nextPage})
       });
-      ScrollInTo();
+      ScrollInTo("result-section");
     },
-    [params._page,setParams]
+    [params._page,handleKeyParams]
   );
 
   if (isLoading || (isFetching && !isSuccess)) {
@@ -96,7 +93,11 @@ const ResultsBrowser = React.memo(({ view, mode }) => {
   }
 
   return (
-    <Section ref={topRef} id="result-section" variant="border-b-0 scroll-mt-5 sm:scroll-mt-0 ">
+    <Section
+      ref={topRef}
+      id="result-section"
+      variant="border-b-0 scroll-mt-5 sm:scroll-mt-0 "
+    >
       {/* HEADING */}
       <Heading
         label={`Properties for ${saleOrRent}`}

@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
-import Section from "../components/ui/Section";
+import React, { useContext, useEffect, useState } from "react";
+
 // LOCAL COMPONENTS
-import { SearchBrowser } from "../features/browser/SearchBrowser";
-import FilterBrowser from "../features/browser/FilterBrowser";
-import ResultsBrowser from "../features/browser/ResultsBrowser";
+import {Section} from "@/components";
+import {ResultsBrowser,SearchBrowser,FilterBrowser} from "@/features/browser";
 import { BaramsContext } from "../context/ParamsProvider";
 
 const BrowserPage = ({mode}) => {

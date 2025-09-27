@@ -1,29 +1,31 @@
 import React, { useCallback } from "react";
 
-// Local Components
-import Section from "../../components/ui/Section";
-import SelectFilters from "./SelectFilters";
-import Button from "../../components/ui/Button";
-import SelectSearch from "../../components/ui/SelectSearch";
+// LOCAL COMPONENTS
+import { Section, Button, ScrollInTo } from "@/components";
+import { SelectSearch, SelectFilters } from "@/features/browser";
 
-// local Icons
-import Icon from "../../assets/photos/Vector (1).svg?react";
+// EXTERNAL COMPONENTS
+import { useMediaQuery } from "@mui/material";
 
-// External Icons
+// LOCAL ICONS
+import Icon from "../../../assets/photos/Vector (1).svg?react";
+
+// EXTERNAL ICONS
 import { LayoutGrid, List } from "lucide-react";
 import { FaExpandArrowsAlt } from "react-icons/fa";
 import HotelIcon from "@mui/icons-material/Hotel";
 
-//  Constants
-import { SORT_OPTIONS } from "../../styles/constants/Options";
-import { useMediaQuery } from "@mui/material";
-import ScrollInTo from "../../components/common/ScrollInTo";
+//  CONSTANTS
+import { SORT_OPTIONS } from "../../../constants/Options";
 
 const FilterBrowser = ({ view, setView }) => {
-  const hundelToggleButton = useCallback((toggle) => {
-    setView(toggle);
-    ScrollInTo();
-  },[setView]);
+  const hundelToggleButton = useCallback(
+    (toggle) => {
+      setView(toggle);
+      ScrollInTo("result-section");
+    },
+    [setView]
+  );
   const isSmall = useMediaQuery("(max-width:600px)");
 
   const flexBetweenCenter = ["flex", " items-center", "flex-wrap"].join(" ");

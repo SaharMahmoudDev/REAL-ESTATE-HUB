@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
+//LOCAL  COMPONENTS
+import LiNavbar from "../ui/LiNavbar";
+import LiNavbarMobile from "../ui/LiNavbarMobile";
+
+// EXTERNAL COMPONENTS
 import { motion, AnimatePresence } from "framer-motion";
+
+// EXTERNAL ICONS
 import { FaBuilding } from "react-icons/fa6";
 import { FaRegHeart, FaTimes } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
 import { HiMenuAlt3 } from "react-icons/hi";
-import LiNavbar from "../ui/LiNavbar";
-import LiNavbarMobile from "../ui/LiNavbarMobile";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,10 +31,6 @@ const Navbar = () => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
-
-  // const navItems = ['Buy', 'Rent', 'Sell', 'Regions'];
-
-  
 
   return (
     <>

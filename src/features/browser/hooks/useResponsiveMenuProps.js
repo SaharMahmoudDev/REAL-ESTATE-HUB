@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 
-export function useResponsiveMenuProps() {
+ function useResponsiveMenuProps() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -27,8 +27,6 @@ export function useResponsiveMenuProps() {
 
           "& .MuiMenuItem-root": {
             width:'100%',
-            // borderBottom:'1px solid #f5f5f5'
-        
         },
       },
     },
@@ -38,3 +36,4 @@ export function useResponsiveMenuProps() {
 
   return isMobile&& mobileMenuProps ;
 }
+export default useResponsiveMenuProps

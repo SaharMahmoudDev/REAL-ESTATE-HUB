@@ -14,7 +14,6 @@ const RangeOption = ({ onChange, handleCommit, valueSlider }) => {
         min={0}
         max={1000}
         step={10}
-        sx={{}}
       />
       <Typography variant="body2">
         Selected: {valueSlider[0]} m² - {valueSlider[1]} m²

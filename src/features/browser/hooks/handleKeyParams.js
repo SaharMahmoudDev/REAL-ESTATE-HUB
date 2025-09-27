@@ -1,13 +1,13 @@
 import React, { useCallback, useContext } from 'react'
-import { BaramsContext } from '../context/ParamsProvider';
+import { BaramsContext } from '../../../context/ParamsProvider';
 
 
  function useBarams() {
   const { params, setParams } = useContext(BaramsContext);
 
  const handleKeyParams = useCallback(
-    (key, value) => {
-      setParams((prev) => ({ ...prev, [key]: value }));
+    (newKeyParams) => {
+      setParams((prev) => ({ ...prev, ...newKeyParams }));
     },
     [setParams]
   
@@ -16,3 +16,4 @@ import { BaramsContext } from '../context/ParamsProvider';
   }
 
 export default useBarams;
+

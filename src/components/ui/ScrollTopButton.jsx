@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+// EXTERNAL COMPONENTS
 import { Fab, Zoom } from "@mui/material";
+
+// EXTERNAL ICONS
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 export default function ScrollTopButton() {

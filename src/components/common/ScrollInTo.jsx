@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ScrollInTo =() => {
-    const section = document.getElementById("result-section");
+const ScrollInTo =(sectionName) => {
+    const section = document.getElementById(sectionName);
 
     section?.scrollIntoView({
               behavior: "smooth",
