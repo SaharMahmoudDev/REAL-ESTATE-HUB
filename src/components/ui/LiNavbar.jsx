@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-const LiNavbar = ({item,href}) => {
+
+const LiNavbar = ({item,href,props}) => {
   return (
   <motion.li 
                       key={item}
@@ -18,6 +19,7 @@ const LiNavbar = ({item,href}) => {
                         className="relative text-gray-700 font-inter font-medium text-base leading-6 tracking-normal hover:text-indigo-600 transition-colors" 
                         href={href}
                         whileHover="hover"
+                        {...props}
                       >
                         {item}
                         <motion.div

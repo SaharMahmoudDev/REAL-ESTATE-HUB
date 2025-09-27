@@ -8,9 +8,15 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 export default function ScrollTopButton() {
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+
+useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 300) {
         setVisible(true);
       } else {
         setVisible(false);
@@ -21,9 +27,7 @@ export default function ScrollTopButton() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+
 
   return (
     <Zoom in={visible}>

@@ -3,6 +3,7 @@ import "./index.css";
 // LOCAL COMPONENTS
 import { ParamsProvider } from "./context/ParamsProvider";
 import Layout from "./layouts/Layout";
+import { LoadingSection } from "./features/browser";
 
 // EXTERNAL COMPONENTS
 import { ThemeProvider } from "@mui/material/styles";
@@ -20,7 +21,7 @@ const BrowserPage = lazy(() => import("./pages/BrowserPage"));
 // FUNCTIONS
 import { queryClient } from "./lib/queryClient";
 function Fallback() {
-  // return <div style={{ padding: 16, color: "#555" }}>Loading…</div>;
+  return <LoadingSection isAllPage={true} variant='!min-h-screen'/>
 }
 
 function App() {

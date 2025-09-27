@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 
 // LOCAL COMPONENTS
 import { Section, Button, ScrollInTo } from "@/components";
-import { SelectSearch, SelectFilters } from "@/features/browser";
+import { SelectSearch, SelectFilters, useParams } from "@/features/browser";
 
 // EXTERNAL COMPONENTS
 import { useMediaQuery } from "@mui/material";
@@ -19,6 +19,9 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import { SORT_OPTIONS } from "../../../constants/Options";
 
 const FilterBrowser = ({ view, setView }) => {
+  const { handleKeyParams } = useParams();
+  const isSmall = useMediaQuery("(max-width:600px)");
+
   const hundelToggleButton = useCallback(
     (toggle) => {
       setView(toggle);
@@ -26,17 +29,19 @@ const FilterBrowser = ({ view, setView }) => {
     },
     [setView]
   );
-  const isSmall = useMediaQuery("(max-width:600px)");
 
-  const flexBetweenCenter = ["flex", " items-center", "flex-wrap"].join(" ");
-  const classNameSortFilter = [
-    "block",
-    "text-[#4B5563]",
-    "text-base",
-    " leading-6",
-    "font-medium",
-    "text-nowrap",
-  ].join(" ");
+  const handleSort = useCallback(
+    (e) => {
+      const isE = e ? e : "price-asc";
+      handleKeyParams({
+        _sort: isE.split("-")[0],
+        _order: isE.split("-")[1]?.trim().toLowerCase(),
+        _page: 1,
+      });
+      ScrollInTo("result-section");
+    },
+    [handleKeyParams]
+  );
 
   const viewBtns = [
     { val: true, Icon: LayoutGrid, label: "Grid view" },
@@ -46,11 +51,12 @@ const FilterBrowser = ({ view, setView }) => {
   return (
     <Section variant="p-3 sm:!p-5">
       {/* Container Filters & Sort */}
-      <div className={`text-black ${flexBetweenCenter} justify-between gap-4`}>
+      <div className={`text-black flexItemCenter justify-between gap-4`}>
         {/*  Container Filters*/}
         <div className={`capitalize flex  items-center gap-1.5 sm:gap-3 `}>
-          <span className={classNameSortFilter}>filters:</span>
-          <div className="flex justify-start items-center flex-wrap gap-1.5 sm:gap-3">
+          <span className="textSort">filters:</span>
+
+          <div className=" justify-start flexItemCenter gap-1.5 sm:gap-3">
             <SelectFilters
               text={isSmall ? "bed" : "bedroom"}
               icon={HotelIcon}
@@ -88,41 +94,39 @@ const FilterBrowser = ({ view, setView }) => {
 
         {/* Container Sort & View */}
         <div
-          className={`${flexBetweenCenter} justify-between capitalize gap-1.5 sm:gap-3 basis-full lg:basis-89`}
+          className={` flexItemCenter justify-between capitalize gap-1.5 sm:gap-3 basis-full lg:basis-89`}
         >
           {/* Container Sort  */}
-          <div className="flex justify-between items-center flex-wrap gap-1.5 sm:gap-3 lg:flex-1">
-            <span className={classNameSortFilter}>sort by:</span>
+          <div className=" justify-between flexItemCenter gap-1.5 sm:gap-3 lg:flex-1">
+            <span className="textSort">sort by:</span>
             <div className="mb-1.5 flex-1">
               <SelectSearch
                 list={SORT_OPTIONS}
                 variantGroup="!h-10.5"
                 defaultLabel="Price: Low to High"
-                defaultValue="price-asc"
-                sort="_sort"
-                order="_order"
-                isSort={true}
+                updateParams={(e) => {
+                  handleSort(e);
+                }}
               />
             </div>
           </div>
 
           {/* CONTAINIER GRID & LIST BUTTONS  */}
-          <div
-            className={`${flexBetweenCenter}  gap-2 hidden sm:flex justify-end`}
-          >
+          <div className={`flexItemCenter gap-2 !hidden sm:!flex justify-end`}>
             {viewBtns.map(({ val, Icon, label }) => {
               return (
                 <Button
                   key={label}
-                  variant={`!p-1.5`}
-                  isActive={!view == val}
+                  variant={`!p-1.5 ${
+                    view == val ? "purple-interactive" : "gray-interactive"
+                  }`}
                   onClick={() => {
                     hundelToggleButton(val);
                   }}
-                  aria-pressed={val}
+                  aria-pressed={val == view}
                   aria-label={label}
                 >
-                  <Icon className="w-6 h-5  text-current" aria-hidden="true" />
+                  <Icon className="w-6 h-5  !text-current" aria-hidden="true" />
                 </Button>
               );
             })}

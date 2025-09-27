@@ -11,7 +11,7 @@ import { useEffect, useRef } from "react";
       (entries) => {
         if (entries[0].isIntersecting) onIntersect();
       },
-      { rootMargin: "80px" } 
+      { rootMargin: "40px" } 
     );
 
     obs.observe(el);

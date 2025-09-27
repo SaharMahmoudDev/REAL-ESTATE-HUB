@@ -1,6 +1,6 @@
 import React from "react";
 // LOCAL COMPONENTS
-import { useResponsiveMenuProps, useSortParams } from "@/features/browser";
+import { useResponsiveMenuProps} from "@/features/browser";
 
 // EXTARNAL COMPONENTS
 import MenuItem from "@mui/material/MenuItem";
@@ -16,22 +16,16 @@ MyListSubheader.muiSkipListHighlight = true;
 const GroupedSelect = React.memo(
   ({
     list = [],
-    isGroup,
     selectProps = {},
     defaultValue = "",
     defaultLabel,
-    sort,
-    order,
-    isSort,
-    updateDraft,
+    updateParams,
     variant,
   }) => {
-    const [value, setValue] = React.useState(defaultValue ?? "");
+    const [value, setValue] = React.useState( defaultValue??"");
 
     const menuProps = useResponsiveMenuProps();
 
-    const updateKeySortOrder = useSortParams(isSort);
-    
     const itemOption = (item, idx) => {
       return (
         <MenuItem
@@ -65,7 +59,6 @@ const GroupedSelect = React.memo(
     };
     const mergedSx = { ...defaultSx, ...selectProps.sx };
 
-
     return (
       <div>
         <FormControl
@@ -78,8 +71,8 @@ const GroupedSelect = React.memo(
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
-              updateDraft?.(e.target.value);
-              updateKeySortOrder(sort, order, e);
+              updateParams?.(e.target.value);
+              console.log(e.target.value)
             }}
             id="grouped-select"
             SelectDisplayProps={{
@@ -88,10 +81,10 @@ const GroupedSelect = React.memo(
             sx={mergedSx}
             MenuProps={menuProps}
           >
-            <MenuItem value={isSort ? defaultValue : ""} className="capitalize">
+            <MenuItem value={defaultValue} className="capitalize">
               {defaultLabel}
             </MenuItem>
-            {isGroup &&
+            {list[0]?.group &&
               list.flatMap((group, gIdx) => [
                 <MyListSubheader
                   key={`hdr-${gIdx}`}
@@ -104,7 +97,7 @@ const GroupedSelect = React.memo(
                 ),
               ])}
 
-            {!isGroup && list?.map((item, idx) => itemOption(item, idx))}
+            {!list[0]?.group && list?.map((item, idx) => itemOption(item, idx))}
           </Select>
         </FormControl>
       </div>

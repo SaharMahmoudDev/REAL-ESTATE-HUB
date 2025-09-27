@@ -117,7 +117,7 @@ const CardBrowser = React.memo(({ view, data, i }) => {
           areaSqm={data.area_sqm}
         />
 
-        <Button as={Link} to="#" variant=" w-full block  text-white mt-3">
+        <Button as={Link} to="#" variant=" w-full block purple-interactive  mt-3">
           view details
         </Button>
       </div>

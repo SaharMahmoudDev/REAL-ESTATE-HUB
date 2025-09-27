@@ -15,7 +15,18 @@ body {
   --color-active-sec: #d1d5db;
 }
 
+.flexItemCenter {
+  @apply flex items-center flex-wrap;
+}
 
+.textSort {
+  @apply block
+    text-[#4B5563]
+    text-base
+     leading-6
+    font-medium
+    text-nowrap;
+}
 @layer base {
   input:-webkit-autofill,
   textarea:-webkit-autofill,
@@ -31,4 +42,3 @@ body {
     -moz-text-fill-color: #000 !important;
   }
 }
-

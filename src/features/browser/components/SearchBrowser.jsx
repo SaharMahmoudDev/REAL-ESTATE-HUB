@@ -1,10 +1,9 @@
-import React, { useCallback, useContext, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // LOCAL COMPONENTS
 import { Section, Heading, Button, ScrollInTo } from "@/components";
-import { SelectSearch,useParams } from "@/features/browser";
-import { BaramsContext } from "../../../context/ParamsProvider";
+import { SelectSearch, useParams } from "@/features/browser";
 import {
   PRICE_RANGE_OPTIONS,
   PROPERTY_TYPES,
@@ -14,8 +13,7 @@ import {
 import { Search } from "lucide-react";
 
 const SearchBrowser = React.memo(() => {
-  const { setParams } = useContext(BaramsContext);
-
+  // hooks
   const navigate = useNavigate();
   const location = useLocation();
   const [draft, setDraft] = useState({
@@ -25,28 +23,36 @@ const SearchBrowser = React.memo(() => {
     city_like: null,
   });
   const prevDraft = useRef(draft);
-  const current = location.pathname.startsWith("/rent") ? "rent" : "buy";
   const { handleKeyParams } = useParams();
-  const handleModeClick = (mode) => {
-    navigate(`/${mode}`);
-  };
 
-  const onLocationChange = useCallback((e) => {
-    setDraft((d) => ({ ...d, city_like: e.target.value }));
+  const current = location.pathname.startsWith("/rent") ? "rent" : "buy";
+
+  // Functions
+
+  const handleClickButBuyRent = useCallback(
+    (value, mode) => {
+      handleKeyParams({ status: value });
+      navigate(`/${mode}`);
+      ScrollInTo("result-section");
+    },
+    [handleKeyParams, navigate]
+  );
+
+  const handleSetDraft = useCallback((newDraft) => {
+    setDraft((d) => ({ ...d, ...newDraft }));
   }, []);
 
-  const onTypeChange = useCallback((v) => {
-    setDraft((d) => ({ ...d, type: v?.toUpperCase() || null }));
-  }, []);
-
-  const onPriceChange = useCallback((v) => {
-    const { min, max } = v || {};
-    if (String(max).trim() === "M10+") {
-      setDraft((d) => ({ ...d, price_lte: min, price_gte: null }));
-    } else {
-      setDraft((d) => ({ ...d, price_lte: min, price_gte: max }));
-    }
-  }, []);
+  const onPriceChange = useCallback(
+    (v) => {
+      const { min, max } = v || {};
+      if (String(max).trim() === "M10+") {
+        handleSetDraft({ price_lte: min, price_gte: null });
+      } else {
+        handleSetDraft({ price_lte: min, price_gte: max });
+      }
+    },
+    [handleSetDraft]
+  );
 
   const checkDraftChange = () => {
     if (prevDraft?.current !== draft) {
@@ -79,23 +85,22 @@ const SearchBrowser = React.memo(() => {
         />
         <div className="mx-auto sm:mx-0 sm:ms-auto">
           <Button
-            variant="me-3 "
-            isActive={current !== "buy"}
+            variant={`${
+              current == "buy" ? "purple-interactive" : "gray-interactive"
+            } me-3`}
             onClick={() => {
-              setParams((prev) => ({ ...prev, status: "FOR_SALE" }));
-              handleModeClick("buy");
-              ScrollInTo("result-section");
+              handleClickButBuyRent("FOR_SALE", "buy");
             }}
           >
             buy
           </Button>
 
           <Button
-            isActive={current !== "rent"}
+            variant={
+              current == "rent" ? "purple-interactive" : "gray-interactive"
+            }
             onClick={() => {
-              setParams((prev) => ({ ...prev, status: "FOR_RENT" }));
-              handleModeClick("rent");
-              ScrollInTo("result-section");
+              handleClickButBuyRent("FOR_RENT", "rent");
             }}
           >
             rent
@@ -111,19 +116,16 @@ const SearchBrowser = React.memo(() => {
           isInput={true}
           placeholder="Enter location"
           label="location"
-          variant="placeholder:text-[#ADAEBC] text-lg leading-6"
-          locationChange={(e) => {
-            onLocationChange(e);
+          updateParams={(e) => {
+            handleSetDraft({ city_like: e.target.value });
           }}
         />
         <SelectSearch
           list={PROPERTY_TYPES}
-          isGroup={true}
           label="property type"
           defaultLabel="All Types"
-          isSort={false}
-          updateDraft={(v) => {
-            onTypeChange(v);
+          updateParams={(v) => {
+            handleSetDraft({ type: v?.toUpperCase() || null });
           }}
         />
 
@@ -131,15 +133,14 @@ const SearchBrowser = React.memo(() => {
           list={PRICE_RANGE_OPTIONS}
           label="price range"
           defaultLabel="Any Price"
-          isSort={false}
-          updateDraft={(v) => {
+          updateParams={(v) => {
             onPriceChange(v);
           }}
         />
 
         <Button
           type="submit"
-          variant="w-full h-12.5 text-white self-end  text-base flex justify-center items-center"
+          variant="w-full h-12.5   purple-interactive  self-end  text-base flex justify-center items-center"
         >
           <Search className="h-5 w-5 me-1" />
           <span>search</span>

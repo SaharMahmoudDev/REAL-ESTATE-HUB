@@ -13,18 +13,11 @@ const SelectSearch = React.memo(
   ({
     isInput,
     label,
-    variant = "",
-    isGroup,
     list,
     selectProps,
-    defaultValue,
     defaultLabel,
-    sort,
-    order,
     variantGroup,
-    isSort,
-    updateDraft,
-    locationChange,
+    updateParams,
     ...props
   }) => {
     return (
@@ -48,8 +41,8 @@ const SelectSearch = React.memo(
             <MdLocationOn className="w-6 h-5 text-[#ADAEBC] ms-1.5" />
             <input
               id="location search"
-              className={` w-full p-1 bg-white rounded-lg outline-0 cursor-pointer placeholder:text-[#ADAEBC] text-lg leading-6  ${variant}`}
-              onChange={locationChange}
+              className={` w-full p-1 bg-white rounded-lg outline-0 cursor-pointer placeholder:text-[#ADAEBC] text-lg leading-6  `}
+              onChange={updateParams}
               {...props}
             ></input>
           </Box>
@@ -57,15 +50,10 @@ const SelectSearch = React.memo(
         {!isInput && (
           <GroupedSelect
             list={list}
-            isGroup={isGroup}
             selectProps={selectProps}
-            defaultValue={defaultValue}
             defaultLabel={defaultLabel}
-            sort={sort}
-            order={order}
             variant={variantGroup}
-            isSort={isSort}
-            updateDraft={updateDraft}
+            updateParams={updateParams}
           />
         )}
       </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-const LiNavbarMobile = ({item ,href,closeSidebar}) => {
+
+const LiNavbarMobile = ({item ,href,closeSidebar,props}) => {
   return (
                       <motion.li
                         key={item}
@@ -19,6 +20,7 @@ const LiNavbarMobile = ({item ,href,closeSidebar}) => {
                             color: "#4f46e5"
                           }}
                           whileTap={{ scale: 0.95 }}
+                          {...props}
                         >
                           <motion.div
                             className="w-2 h-2 bg-indigo-600 rounded-full opacity-0"

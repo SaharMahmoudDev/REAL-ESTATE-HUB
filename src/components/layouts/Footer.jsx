@@ -210,11 +210,13 @@ const Footer = () => {
                 item="buy property"
                 href="/buy"
                 variants={listItemVariants}
+                prefetch='intent'
               />
               <LiFooter
                 item="rent property"
                 href="/rent"
                 variants={listItemVariants}
+                prefetch='intent'
               />
               <LiFooter
                 item="sell property"

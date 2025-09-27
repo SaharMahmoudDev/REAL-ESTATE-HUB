@@ -94,8 +94,8 @@ const Navbar = () => {
                     },
                   }}
                 >
-                  <LiNavbar item="Buy" href="/buy" />
-                  <LiNavbar item="Rent" href="/rent" />
+                  <LiNavbar item="Buy" href="/buy" prefetch='intent'/>
+                  <LiNavbar item="Rent" href="/rent" prefetch='intent'/>
                   <LiNavbar item="Sell" href="#" />
                   <LiNavbar item="Regions" href="#" />
                 </motion.ul>
@@ -261,11 +261,13 @@ const Navbar = () => {
                       item="buy"
                       href="/buy"
                       closeSidebar={closeSidebar}
+                      prefetch='intent'
                     />
                     <LiNavbarMobile
                       item="rent"
                       href="/rent"
                       closeSidebar={closeSidebar}
+                      prefetch='intent'
                     />
                     <LiNavbarMobile
                       item="sell"

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-const LiFooter = ({item,href,variant}) => {
+
+const LiFooter = ({item,href,variant,props}) => {
   return (
   <motion.li key={item} variants={variant}>
                   <motion.a 
@@ -11,6 +12,7 @@ const LiFooter = ({item,href,variant}) => {
                       color: "#ffffff"
                     }}
                     transition={{ duration: 0.2 }}
+                    {...props}
                   >
                     <motion.span
                       className="absolute left-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100"
