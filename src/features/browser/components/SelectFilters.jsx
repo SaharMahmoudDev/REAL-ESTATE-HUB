@@ -12,7 +12,7 @@ import {
 import { Select } from "@mui/material";
 import { MenuItem } from "@mui/material";
 
-const SelectFilters = ({
+const SelectFilters = React.memo(({
   text,
   icon,
   variant = "",
@@ -128,6 +128,6 @@ const SelectFilters = ({
       </Select>
     </>
   );
-};
+})
 
 export default SelectFilters;

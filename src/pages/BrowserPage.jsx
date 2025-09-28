@@ -8,9 +8,8 @@ import {
   FilterBrowser,
   useParams,
 } from "@/features/browser";
-import { BaramsContext } from "../context/ParamsProvider";
 
-const BrowserPage = ({ mode }) => {
+const BrowserPage =React.memo(({ mode }) => {
   const [view, setView] = useState(true);
   const { handleKeyParams } = useParams();
 
@@ -27,6 +26,6 @@ const BrowserPage = ({ mode }) => {
       </Section>
     </>
   );
-};
+})
 
 export default BrowserPage;

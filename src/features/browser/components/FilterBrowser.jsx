@@ -18,7 +18,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 //  CONSTANTS
 import { SORT_OPTIONS } from "../../../constants/Options";
 
-const FilterBrowser = ({ view, setView }) => {
+const FilterBrowser = React.memo(({ view, setView }) => {
   const { handleKeyParams } = useParams();
   const isSmall = useMediaQuery("(max-width:600px)");
 
@@ -135,6 +135,6 @@ const FilterBrowser = ({ view, setView }) => {
       </div>
     </Section>
   );
-};
+})
 
 export default FilterBrowser;

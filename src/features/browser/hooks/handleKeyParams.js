@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react'
 import { BaramsContext } from '../../../context/ParamsProvider';
 
 
- function useBarams() {
+ const useBarams=()=> {
   const { params, setParams } = useContext(BaramsContext);
 
  const handleKeyParams = useCallback(
@@ -12,7 +12,7 @@ import { BaramsContext } from '../../../context/ParamsProvider';
     [setParams]
   
  )
-  return { params, setParams, handleKeyParams };
+  return { params,setParams, handleKeyParams };
   }
 
 export default useBarams;
