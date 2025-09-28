@@ -72,7 +72,6 @@ const GroupedSelect = React.memo(
             onChange={(e) => {
               setValue(e.target.value);
               updateParams?.(e.target.value);
-              console.log(e.target.value)
             }}
             id="grouped-select"
             SelectDisplayProps={{

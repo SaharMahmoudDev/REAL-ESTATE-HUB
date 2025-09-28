@@ -1,21 +1,21 @@
 // src/features/browser/components
 
-export { default as ResultsBrowser } from "./components/ResultsBrowser";
-export { default as SelectFilters } from "./components/SelectFilters";
-export { default as DetailsRooms } from "./components/DetailsRooms";
-export { default as SearchBrowser } from "./components/SearchBrowser";
-export { default as FilterBrowser } from "./components/FilterBrowser";
-export { default as SelectSearch } from "./components/SelectSearch";
+export { default as ResultsBrowser } from "./_components/ResultsBrowser";
+export { default as SelectFilters } from "./_components/SelectFilters";
+export { default as DetailsRooms } from "./_components/DetailsRooms";
+export { default as SearchBrowser } from "./_components/SearchBrowser";
+export { default as FilterBrowser } from "./_components/FilterBrowser";
+export { default as SelectSearch } from "./_components/SelectSearch";
 
 // src/features/browser/ui
 
-export { default as RangeOption } from "./ui/RangeOption";
-export { default as IconLabel } from "./ui/IconLabel";
-export { default as GroupedSelect } from "./ui/GroupedSelect";
-export { default as CardBrowser } from "./ui/CardBrowser";
-export { default as PaginationSection } from "./ui/Pagination";
-export {default as LoadingSection} from './ui/LoadingSection';
-export {default as ErrorSection} from './ui/ErrorSection';
+export { default as RangeOption } from "./_ui/RangeOption";
+export { default as IconLabel } from "./_ui/IconLabel";
+export { default as GroupedSelect } from "./_ui/GroupedSelect";
+export { default as CardBrowser } from "./_ui/CardBrowser";
+export { default as PaginationSection } from "./_ui/Pagination";
+export {default as LoadingSection} from './_ui/LoadingSection';
+export {default as ErrorSection} from './_ui/ErrorSection';
 
 // src/features/browser/hooks
 
